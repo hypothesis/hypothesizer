@@ -1,0 +1,9 @@
+[
+  {
+    "from": "/",
+    "to": "_list/calendar/by_created",
+    "query": {
+      "group": "true"
+    }
+  }
+]
