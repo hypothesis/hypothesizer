@@ -14,10 +14,17 @@ function(head, req) {
   });
   var dates = {};
   while (row = getRow()) {
-    dates[row.key[0] + '-' + row.key[1] + '-' + row.key[2]] = row.value;
+    // TODO: assumes array-based key...
+    if (row.key[0].search('@') != -1) {
+      // first key is the user name, so skip it
+      // TODO: make this dumber / unmix concerns
+      dates[row.key[1] + '-' + row.key[2] + '-' + row.key[3]] = row.value;
+    } else {
+      dates[row.key[0] + '-' + row.key[1] + '-' + row.key[2]] = row.value;
+    }
   }
   send('<html><body>');
-  var weeks_count = Number(req.query['weeks']) || 5;
+  var weeks_count = Number(req.query['weeks']) || 52;
   send('<table>');
   send('<tr>');
   send('<th>Week</th>');
@@ -34,7 +41,7 @@ function(head, req) {
     for (var i = 0; i < 7; i++) {
       var stat = dates[day.format('YYYY-MM-DD')] || '';
       send('<td title="' + day.calendar() + '">');
-      if (moment(day.format('YYYY-MM-DD')).isSame(today.format('YYYY-MM-DD'))) {
+      if (day.format('YYYY-MM-DD') == today.format('YYYY-MM-DD')) {
         send('<strong>' + stat + '</strong>');
       } else {
         send(stat);

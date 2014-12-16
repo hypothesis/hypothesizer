@@ -5,5 +5,21 @@
     "query": {
       "group": "true"
     }
+  },
+  {
+    "from": "/users/",
+    "to": "_list/table/by_user",
+    "query": {
+      "group_level": "1"
+    }
+  },
+  {
+    "from": "/users/:user",
+    "to": "_list/calendar/by_user",
+    "query": {
+      "startkey": [":user"],
+      "endkey": [":user", "Z"],
+      "group": "true"
+    }
   }
 ]
