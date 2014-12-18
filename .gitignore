@@ -1,1 +1,2 @@
 .couchapprc
+node_modules/*
