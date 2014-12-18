@@ -1,6 +1,10 @@
 [
   {
     "from": "/",
+    "to": "index.html"
+  },
+  {
+    "from": "/calendar",
     "to": "_list/calendar/by_created",
     "query": {
       "group": "true"
