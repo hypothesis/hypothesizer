@@ -25,5 +25,9 @@
       "endkey": [":user", "Z"],
       "group": "true"
     }
+  },
+  {
+    "from": "*",
+    "to": "*"
   }
 ]
