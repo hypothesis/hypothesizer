@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hypothesizer</title>
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+    body{font-family: 'Open Sans'}
+    </style>
+  </head>
+  <body>
+
+    <article class="ui one column page grid">
+      <section class="column">
+        <h1 class="ui center aligned header">
+          Hypothesizer!
+        </h1>
+
+        <section class="ui statistics">
+          <div class="statistic" v-if="total_public">
+            <div class="value">{{total_public}}</div>
+            <div class="label">Total Public</div>
+          </div>
+          <div class="statistic" v-if="users">
+            <div class="value">{{total_public_users}}</div>
+            <div class="label">Total Users</div>
+          </div>
+          <div class="statistic" v-if="uris">
+            <div class="value">{{total_public_uris}}</div>
+            <div class="label">Total URIs</div>
+          </div>
+        </section>
+      </section>
+    </article>
+
+    <article class="ui two column page grid">
+      <section class="column">
+        <table class="ui striped table">
+          <tr v-repeat="users | orderBy 'value' -1 | limit 100">
+            <td>{{key[0]}}</td>
+            <td class="right aligned">{{value}}</td>
+          </tr>
+        </table>
+      </section>
+      <section class="column">
+        <table class="ui striped table">
+          <tr v-repeat="uris | orderBy 'value' -1 | limit 100">
+            <td>{{key | truncate 50}}</td>
+            <td class="right aligned">{{value}}</td>
+          </tr>
+        </table>
+      </section>
+    </article>
+
+    <script src="scripts/bundle.js"></script>
+  </body>
+</html>
