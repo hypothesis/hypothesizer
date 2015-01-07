@@ -21,6 +21,7 @@ window.Hypothesizer = new Vue({
   el: 'body',
   data: {
     total_public: 0,
+    total_public_tags: 0,
     users: [],
     uris: []
   },
@@ -41,6 +42,11 @@ window.Hypothesizer = new Vue({
 db.query('hypothesizer/by_created')
   .then(function (res) {
     Hypothesizer.total_public = res['rows'][0]['value'];
+  });
+
+db.query('hypothesizer/by_tag')
+  .then(function (res) {
+    Hypothesizer.total_public_tags = res['rows'][0]['value'];
   });
 
 db.query('hypothesizer/by_user', {group_level: 1})
