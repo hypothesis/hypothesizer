@@ -7,6 +7,8 @@
  **/
 function(head, req) {
   var moment = require('lib/moment');
+  var Handlebars = require('lib/handlebars');
+  var ddoc = this;
   start({
     'headers': {
       'Content-Type': 'text/html'
@@ -23,24 +25,31 @@ function(head, req) {
       dates[row.key[0] + '-' + row.key[1] + '-' + row.key[2]] = row.value;
     }
   }
-  send('<html><body>');
+  send(Handlebars.compile(ddoc.templates.header)({base_url: req.requested_path.slice(0, req.requested_path.indexOf('_rewrite')+1).join('/')}));
   var weeks_count = Number(req.query['weeks']) || 52;
-  send('<table>');
-  send('<tr>');
-  send('<th>Week</th>');
+  send('<table class="ui table">');
+  send('<tr><thead>');
+  send('<th class="disabled one wide">Week</th>');
   var weekdays = moment.weekdays();
   for (var i = 0; i < 7; i++) {
     send('<th>' + weekdays[i] + '</th>');
   }
-  send('</tr>');
-  send('<tr>');
+  send('</thead></tr>');
+  send('<tbody><tr>');
   var today = moment();
   var day = moment().subtract(weeks_count-1, 'weeks').startOf('week');
+  var first = true;
   for (var j = 0; j < weeks_count; j++) {
-    send('<td>' + day.week() + '</td>');
+    send('<td class="disabled">' + day.week() + '</td>');
     for (var i = 0; i < 7; i++) {
       var stat = dates[day.format('YYYY-MM-DD')] || '';
-      send('<td title="' + day.calendar() + '">');
+      send('<td title="' + day.calendar('YYYY-MM-DD') + '" class="month' + day.month() + '"'
+          + (day.date() == 1 || first ? ' style="position: relative"' : '') + '>');
+      if (day.date() == 1 || first) {
+        send('<span class="ui top right attached label">'
+            + day.format('MMM') + '</span>');
+        first = false;
+      }
       if (day.format('YYYY-MM-DD') == today.format('YYYY-MM-DD')) {
         send('<strong>' + stat + '</strong>');
       } else {
@@ -51,7 +60,7 @@ function(head, req) {
     }
     send('</tr><tr>');
   }
-  send('</tr>');
+  send('</tr></tbody>');
   send('</table>');
-  send('</body></html>');
+  send(ddoc.templates.footer);
 }
