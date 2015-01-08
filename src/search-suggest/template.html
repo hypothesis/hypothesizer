@@ -5,7 +5,7 @@
     <i class="search icon"></i>
   </div>
   <div class="results transition" v-class="visible: results.length > 0">
-    <a class="result" v-repeat="results" href="users/{{key}}">
+    <a class="result" v-repeat="results" track-by="key" href="users/{{key}}">
       <div class="content">
         <div class="title">{{key}}</div>
       </div>
