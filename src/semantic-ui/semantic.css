@@ -1,7 +1,7 @@
-@import 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin';
+@import 'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin';
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -20,6 +20,10 @@
 *,
 *:before,
 *:after {
+  box-sizing: inherit;
+}
+
+html {
   box-sizing: border-box;
 }
 
@@ -31,6 +35,7 @@ input[type="search"],
 input[type="password"] {
   -webkit-appearance: none;
   -moz-appearance: none;
+  /* mobile firefox too! */
 }
 
 /*******************************
@@ -57,6 +62,7 @@ html {
   -ms-text-size-adjust: 100%;
   /* 2 */
   -webkit-text-size-adjust: 100%;
+  /* 2 */
 }
 
 /**
@@ -103,6 +109,7 @@ video {
   display: inline-block;
   /* 1 */
   vertical-align: baseline;
+  /* 2 */
 }
 
 /**
@@ -304,6 +311,7 @@ textarea {
   font: inherit;
   /* 2 */
   margin: 0;
+  /* 3 */
 }
 
 /**
@@ -341,6 +349,7 @@ input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
+  /* 3 */
 }
 
 /**
@@ -384,6 +393,7 @@ input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
+  /* 2 */
 }
 
 /**
@@ -440,6 +450,7 @@ legend {
   border: 0;
   /* 1 */
   padding: 0;
+  /* 2 */
 }
 
 /**
@@ -481,7 +492,7 @@ th {
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -494,14 +505,6 @@ th {
 /*******************************
              Page
 *******************************/
-
-/* UI requires Border-Box */
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
 
 html,
 body {
@@ -620,7 +623,7 @@ a:hover {
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -662,6 +665,7 @@ a:hover {
   user-select: none;
   -webkit-transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
   transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+  will-change: '';
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -722,13 +726,13 @@ a:hover {
   color: rgba(0, 0, 0, 0.8);
 }
 
-.ui.button.active:hover {
+.ui.active.button:hover {
   background-color: #d0d0d0;
   background-image: none;
   color: rgba(0, 0, 0, 0.8);
 }
 
-.ui.button.active:active {
+.ui.active.button:active {
   background-color: #d0d0d0;
   background-image: none;
 }
@@ -824,7 +828,7 @@ a:hover {
 .ui.buttons .disabled.button,
 .ui.disabled.button,
 .ui.disabled.button:hover,
-.ui.disabled.button.active {
+.ui.disabled.active.button {
   cursor: default;
   background-color: #dcddde !important;
   color: rgba(0, 0, 0, 0.4) !important;
@@ -845,6 +849,7 @@ a:hover {
 .ui.animated.button {
   position: relative;
   overflow: hidden;
+  vertical-align: middle;
   padding-right: 0em !important;
 }
 
@@ -1346,16 +1351,16 @@ a:hover {
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.15) inset, 0px 1px 4px 0px rgba(39, 41, 43, 0.15) inset;
 }
 
-.ui.basic.buttons .button.active,
-.ui.basic.button.active {
+.ui.basic.buttons .active.button,
+.ui.basic.active.button {
   background: rgba(0, 0, 0, 0.05) !important;
   box-shadow: '' !important;
   color: rgba(0, 0, 0, 0.8);
   box-shadow: rgba(39, 41, 43, 0.3);
 }
 
-.ui.basic.buttons .button.active:hover,
-.ui.basic.button.active:hover {
+.ui.basic.buttons .active.button:hover,
+.ui.basic.active.button:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
@@ -1369,7 +1374,7 @@ a:hover {
   box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.15) inset, 0px 1px 4px 0px rgba(39, 41, 43, 0.15) inset inset;
 }
 
-.ui.basic.buttons .button.active {
+.ui.basic.buttons .active.button {
   box-shadow: rgba(39, 41, 43, 0.3) inset;
 }
 
@@ -1395,16 +1400,16 @@ a:hover {
   box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.9) inset !important;
 }
 
-.ui.basic.inverted.buttons .button.active,
-.ui.basic.inverted.button.active {
+.ui.basic.inverted.buttons .active.button,
+.ui.basic.inverted.active.button {
   background-color: rgba(255, 255, 255, 0.05);
   color: #ffffff;
   text-shadow: none;
   box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.7) inset;
 }
 
-.ui.basic.inverted.buttons .button.active:hover,
-.ui.basic.inverted.button.active:hover {
+.ui.basic.inverted.buttons .active.button:hover,
+.ui.basic.inverted.active.button:hover {
   background-color: rgba(255, 255, 255, 0.07);
   box-shadow: 0px 0px 0px 2px #ffffff inset !important;
 }
@@ -1594,6 +1599,8 @@ a:hover {
 
 .ui.buttons .or:before {
   position: absolute;
+  text-align: center;
+  border-radius: 500rem;
   content: 'or';
   top: 50%;
   left: 50%;
@@ -1603,12 +1610,10 @@ a:hover {
   margin-left: -0.892855em;
   width: 1.78571em;
   height: 1.78571em;
-  line-height: 1.58571em;
+  line-height: 1.78571em;
   color: rgba(0, 0, 0, 0.4);
   font-style: normal;
   font-weight: bold;
-  text-align: center;
-  border-radius: 500em;
   box-shadow: 0px 0px 0px 1px transparent inset;
 }
 
@@ -1928,10 +1933,10 @@ a:hover {
   text-shadow: none;
 }
 
-.ui.black.buttons .button.active,
-.ui.black.buttons .button.active:active,
-.ui.black.button.active,
-.ui.black.button .button.active:active {
+.ui.black.buttons .active.button,
+.ui.black.buttons .active.button:active,
+.ui.black.active.button,
+.ui.black.button .active.button:active {
   background-color: #0f0f10;
   color: #ffffff;
   text-shadow: none;
@@ -1958,8 +1963,8 @@ a:hover {
   color: #0a0a0b !important;
 }
 
-.ui.basic.black.buttons .button.active,
-.ui.basic.black.button.active {
+.ui.basic.black.buttons .active.button,
+.ui.basic.black.active.button {
   background: transparent !important;
   box-shadow: 0px 0px 0px 2px #0a0a0b inset !important;
   color: #0a0a0b !important;
@@ -1985,8 +1990,8 @@ a:hover {
   color: #ffffff;
 }
 
-.ui.inverted.black.buttons .button.active,
-.ui.inverted.black.button.active {
+.ui.inverted.black.buttons .active.button,
+.ui.inverted.black.active.button {
   box-shadow: 0px 0px 0px 2px #333333 inset !important;
   background-color: #333333;
   color: #ffffff;
@@ -2016,9 +2021,9 @@ a:hover {
   color: #ffffff !important;
 }
 
-.ui.inverted.black.basic.buttons .button.active,
-.ui.inverted.black.buttons .basic.button.active,
-.ui.inverted.black.basic.button.active {
+.ui.inverted.black.basic.buttons .active.button,
+.ui.inverted.black.buttons .basic.active.button,
+.ui.inverted.black.basic.active.button {
   box-shadow: 0px 0px 0px 2px #333333 inset !important;
   color: #ffffff !important;
 }
@@ -2058,10 +2063,10 @@ a:hover {
   text-shadow: none;
 }
 
-.ui.blue.buttons .button.active,
-.ui.blue.buttons .button.active:active,
-.ui.blue.button.active,
-.ui.blue.button .button.active:active {
+.ui.blue.buttons .active.button,
+.ui.blue.buttons .active.button:active,
+.ui.blue.active.button,
+.ui.blue.button .active.button:active {
   background-color: #3576ac;
   color: #ffffff;
   text-shadow: none;
@@ -2088,8 +2093,8 @@ a:hover {
   color: #3370a5 !important;
 }
 
-.ui.basic.blue.buttons .button.active,
-.ui.basic.blue.button.active {
+.ui.basic.blue.buttons .active.button,
+.ui.basic.blue.active.button {
   background: transparent !important;
   box-shadow: 0px 0px 0px 2px #3370a5 inset !important;
   color: #3370a5 !important;
@@ -2115,8 +2120,8 @@ a:hover {
   color: #ffffff;
 }
 
-.ui.inverted.blue.buttons .button.active,
-.ui.inverted.blue.button.active {
+.ui.inverted.blue.buttons .active.button,
+.ui.inverted.blue.active.button {
   box-shadow: 0px 0px 0px 2px #54c8ff inset !important;
   background-color: #54c8ff;
   color: #ffffff;
@@ -2146,9 +2151,9 @@ a:hover {
   color: #54c8ff !important;
 }
 
-.ui.inverted.blue.basic.buttons .button.active,
-.ui.inverted.blue.buttons .basic.button.active,
-.ui.inverted.blue.basic.button.active {
+.ui.inverted.blue.basic.buttons .active.button,
+.ui.inverted.blue.buttons .basic.active.button,
+.ui.inverted.blue.basic.active.button {
   box-shadow: 0px 0px 0px 2px #54c8ff inset !important;
   color: #54c8ff !important;
 }
@@ -2188,10 +2193,10 @@ a:hover {
   text-shadow: none;
 }
 
-.ui.green.buttons .button.active,
-.ui.green.buttons .button.active:active,
-.ui.green.button.active,
-.ui.green.button .button.active:active {
+.ui.green.buttons .active.button,
+.ui.green.buttons .active.button:active,
+.ui.green.active.button,
+.ui.green.button .active.button:active {
   background-color: #49b562;
   color: #ffffff;
   text-shadow: none;
@@ -2218,8 +2223,8 @@ a:hover {
   color: #46ae5f !important;
 }
 
-.ui.basic.green.buttons .button.active,
-.ui.basic.green.button.active {
+.ui.basic.green.buttons .active.button,
+.ui.basic.green.active.button {
   background: transparent !important;
   box-shadow: 0px 0px 0px 2px #46ae5f inset !important;
   color: #46ae5f !important;
@@ -2245,8 +2250,8 @@ a:hover {
   color: #ffffff;
 }
 
-.ui.inverted.green.buttons .button.active,
-.ui.inverted.green.button.active {
+.ui.inverted.green.buttons .active.button,
+.ui.inverted.green.active.button {
   box-shadow: 0px 0px 0px 2px #2ecc40 inset !important;
   background-color: #2ecc40;
   color: #ffffff;
@@ -2276,9 +2281,9 @@ a:hover {
   color: #2ecc40 !important;
 }
 
-.ui.inverted.green.basic.buttons .button.active,
-.ui.inverted.green.buttons .basic.button.active,
-.ui.inverted.green.basic.button.active {
+.ui.inverted.green.basic.buttons .active.button,
+.ui.inverted.green.buttons .basic.active.button,
+.ui.inverted.green.basic.active.button {
   box-shadow: 0px 0px 0px 2px #2ecc40 inset !important;
   color: #2ecc40 !important;
 }
@@ -2318,11 +2323,11 @@ a:hover {
   text-shadow: none;
 }
 
-.ui.orange.buttons .button.active,
-.ui.orange.buttons .button.active:active,
-.ui.orange.button.active,
-.ui.orange.button .button.active:active {
-  background-color: #0f0f10;
+.ui.orange.buttons .active.button,
+.ui.orange.buttons .active.button:active,
+.ui.orange.active.button,
+.ui.orange.button .active.button:active {
+  background-color: #dc6a3d;
   color: #ffffff;
   text-shadow: none;
 }
@@ -2348,8 +2353,8 @@ a:hover {
   color: #db6435 !important;
 }
 
-.ui.basic.orange.buttons .button.active,
-.ui.basic.orange.button.active {
+.ui.basic.orange.buttons .active.button,
+.ui.basic.orange.active.button {
   background: transparent !important;
   box-shadow: 0px 0px 0px 2px #db6435 inset !important;
   color: #db6435 !important;
@@ -2375,8 +2380,8 @@ a:hover {
   color: #ffffff;
 }
 
-.ui.inverted.orange.buttons .button.active,
-.ui.inverted.orange.button.active {
+.ui.inverted.orange.buttons .active.button,
+.ui.inverted.orange.active.button {
   box-shadow: 0px 0px 0px 2px #ff851b inset !important;
   background-color: #ff851b;
   color: #ffffff;
@@ -2406,9 +2411,9 @@ a:hover {
   color: #ff851b !important;
 }
 
-.ui.inverted.orange.basic.buttons .button.active,
-.ui.inverted.orange.buttons .basic.button.active,
-.ui.inverted.orange.basic.button.active {
+.ui.inverted.orange.basic.buttons .active.button,
+.ui.inverted.orange.buttons .basic.active.button,
+.ui.inverted.orange.basic.active.button {
   box-shadow: 0px 0px 0px 2px #ff851b inset !important;
   color: #ff851b !important;
 }
@@ -2448,10 +2453,10 @@ a:hover {
   text-shadow: none;
 }
 
-.ui.pink.buttons .button.active,
-.ui.pink.buttons .button.active:active,
-.ui.pink.button.active,
-.ui.pink.button .button.active:active {
+.ui.pink.buttons .active.button,
+.ui.pink.buttons .active.button:active,
+.ui.pink.active.button,
+.ui.pink.button .active.button:active {
   background-color: #d5348e;
   color: #ffffff;
   text-shadow: none;
@@ -2478,8 +2483,8 @@ a:hover {
   color: #d22c8a !important;
 }
 
-.ui.basic.pink.buttons .button.active,
-.ui.basic.pink.button.active {
+.ui.basic.pink.buttons .active.button,
+.ui.basic.pink.active.button {
   background: transparent !important;
   box-shadow: 0px 0px 0px 2px #d22c8a inset !important;
   color: #d22c8a !important;
@@ -2505,8 +2510,8 @@ a:hover {
   color: #ffffff;
 }
 
-.ui.inverted.pink.buttons .button.active,
-.ui.inverted.pink.button.active {
+.ui.inverted.pink.buttons .active.button,
+.ui.inverted.pink.active.button {
   box-shadow: 0px 0px 0px 2px #ff8edf inset !important;
   background-color: #ff8edf;
   color: #ffffff;
@@ -2536,9 +2541,9 @@ a:hover {
   color: #ff8edf !important;
 }
 
-.ui.inverted.pink.basic.buttons .button.active,
-.ui.inverted.pink.buttons .basic.button.active,
-.ui.inverted.pink.basic.button.active {
+.ui.inverted.pink.basic.buttons .active.button,
+.ui.inverted.pink.buttons .basic.active.button,
+.ui.inverted.pink.basic.active.button {
   box-shadow: 0px 0px 0px 2px #ff8edf inset !important;
   color: #ff8edf !important;
 }
@@ -2578,10 +2583,10 @@ a:hover {
   text-shadow: none;
 }
 
-.ui.purple.buttons .button.active,
-.ui.purple.buttons .button.active:active,
-.ui.purple.button.active,
-.ui.purple.button .button.active:active {
+.ui.purple.buttons .active.button,
+.ui.purple.buttons .active.button:active,
+.ui.purple.active.button,
+.ui.purple.button .active.button:active {
   background-color: #4c467a;
   color: #ffffff;
   text-shadow: none;
@@ -2608,8 +2613,8 @@ a:hover {
   color: #484273 !important;
 }
 
-.ui.basic.purple.buttons .button.active,
-.ui.basic.purple.button.active {
+.ui.basic.purple.buttons .active.button,
+.ui.basic.purple.active.button {
   background: transparent !important;
   box-shadow: 0px 0px 0px 2px #484273 inset !important;
   color: #484273 !important;
@@ -2635,8 +2640,8 @@ a:hover {
   color: #1b1c1d;
 }
 
-.ui.inverted.purple.buttons .button.active,
-.ui.inverted.purple.button.active {
+.ui.inverted.purple.buttons .active.button,
+.ui.inverted.purple.active.button {
   box-shadow: 0px 0px 0px 2px #cdc6ff inset !important;
   background-color: #cdc6ff;
   color: #1b1c1d;
@@ -2666,9 +2671,9 @@ a:hover {
   color: #cdc6ff !important;
 }
 
-.ui.inverted.purple.basic.buttons .button.active,
-.ui.inverted.purple.buttons .basic.button.active,
-.ui.inverted.purple.basic.button.active {
+.ui.inverted.purple.basic.buttons .active.button,
+.ui.inverted.purple.buttons .basic.active.button,
+.ui.inverted.purple.basic.active.button {
   box-shadow: 0px 0px 0px 2px #cdc6ff inset !important;
   color: #cdc6ff !important;
 }
@@ -2708,10 +2713,10 @@ a:hover {
   text-shadow: none;
 }
 
-.ui.red.buttons .button.active,
-.ui.red.buttons .button.active:active,
-.ui.red.button.active,
-.ui.red.button .button.active:active {
+.ui.red.buttons .active.button,
+.ui.red.buttons .active.button:active,
+.ui.red.active.button,
+.ui.red.button .active.button:active {
   background-color: #d44747;
   color: #ffffff;
   text-shadow: none;
@@ -2738,8 +2743,8 @@ a:hover {
   color: #d23f3f !important;
 }
 
-.ui.basic.red.buttons .button.active,
-.ui.basic.red.button.active {
+.ui.basic.red.buttons .active.button,
+.ui.basic.red.active.button {
   background: transparent !important;
   box-shadow: 0px 0px 0px 2px #d23f3f inset !important;
   color: #d23f3f !important;
@@ -2765,8 +2770,8 @@ a:hover {
   color: #ffffff;
 }
 
-.ui.inverted.red.buttons .button.active,
-.ui.inverted.red.button.active {
+.ui.inverted.red.buttons .active.button,
+.ui.inverted.red.active.button {
   box-shadow: 0px 0px 0px 2px #ff695e inset !important;
   background-color: #ff695e;
   color: #ffffff;
@@ -2796,9 +2801,9 @@ a:hover {
   color: #ff695e !important;
 }
 
-.ui.inverted.red.basic.buttons .button.active,
-.ui.inverted.red.buttons .basic.button.active,
-.ui.inverted.red.basic.button.active {
+.ui.inverted.red.basic.buttons .active.button,
+.ui.inverted.red.buttons .basic.active.button,
+.ui.inverted.red.basic.active.button {
   box-shadow: 0px 0px 0px 2px #ff695e inset !important;
   color: #ff695e !important;
 }
@@ -2838,10 +2843,10 @@ a:hover {
   text-shadow: none;
 }
 
-.ui.teal.buttons .button.active,
-.ui.teal.buttons .button.active:active,
-.ui.teal.button.active,
-.ui.teal.button .button.active:active {
+.ui.teal.buttons .active.button,
+.ui.teal.buttons .active.button:active,
+.ui.teal.active.button,
+.ui.teal.button .active.button:active {
   background-color: #009c95;
   color: #ffffff;
   text-shadow: none;
@@ -2868,8 +2873,8 @@ a:hover {
   color: #00918b !important;
 }
 
-.ui.basic.teal.buttons .button.active,
-.ui.basic.teal.button.active {
+.ui.basic.teal.buttons .active.button,
+.ui.basic.teal.active.button {
   background: transparent !important;
   box-shadow: 0px 0px 0px 2px #00918b inset !important;
   color: #00918b !important;
@@ -2895,8 +2900,8 @@ a:hover {
   color: #1b1c1d;
 }
 
-.ui.inverted.teal.buttons .button.active,
-.ui.inverted.teal.button.active {
+.ui.inverted.teal.buttons .active.button,
+.ui.inverted.teal.active.button {
   box-shadow: 0px 0px 0px 2px #6dffff inset !important;
   background-color: #6dffff;
   color: #1b1c1d;
@@ -2926,9 +2931,9 @@ a:hover {
   color: #6dffff !important;
 }
 
-.ui.inverted.teal.basic.buttons .button.active,
-.ui.inverted.teal.buttons .basic.button.active,
-.ui.inverted.teal.basic.button.active {
+.ui.inverted.teal.basic.buttons .active.button,
+.ui.inverted.teal.buttons .basic.active.button,
+.ui.inverted.teal.basic.active.button {
   box-shadow: 0px 0px 0px 2px #6dffff inset !important;
   color: #6dffff !important;
 }
@@ -2968,10 +2973,10 @@ a:hover {
   text-shadow: none;
 }
 
-.ui.yellow.buttons .button.active,
-.ui.yellow.buttons .button.active:active,
-.ui.yellow.button.active,
-.ui.yellow.button .button.active:active {
+.ui.yellow.buttons .active.button,
+.ui.yellow.buttons .active.button:active,
+.ui.yellow.active.button,
+.ui.yellow.button .active.button:active {
   background-color: #eabc0e;
   color: #ffffff;
   text-shadow: none;
@@ -2998,8 +3003,8 @@ a:hover {
   color: #e0b40d !important;
 }
 
-.ui.basic.yellow.buttons .button.active,
-.ui.basic.yellow.button.active {
+.ui.basic.yellow.buttons .active.button,
+.ui.basic.yellow.active.button {
   background: transparent !important;
   box-shadow: 0px 0px 0px 2px #e0b40d inset !important;
   color: #e0b40d !important;
@@ -3025,8 +3030,8 @@ a:hover {
   color: #1b1c1d;
 }
 
-.ui.inverted.yellow.buttons .button.active,
-.ui.inverted.yellow.button.active {
+.ui.inverted.yellow.buttons .active.button,
+.ui.inverted.yellow.active.button {
   box-shadow: 0px 0px 0px 2px #ffe21f inset !important;
   background-color: #ffe21f;
   color: #1b1c1d;
@@ -3056,9 +3061,9 @@ a:hover {
   color: #ffe21f !important;
 }
 
-.ui.inverted.yellow.basic.buttons .button.active,
-.ui.inverted.yellow.buttons .basic.button.active,
-.ui.inverted.yellow.basic.button.active {
+.ui.inverted.yellow.basic.buttons .active.button,
+.ui.inverted.yellow.buttons .basic.active.button,
+.ui.inverted.yellow.basic.active.button {
   box-shadow: 0px 0px 0px 2px #ffe21f inset !important;
   color: #ffe21f !important;
 }
@@ -3101,7 +3106,7 @@ a:hover {
 }
 
 .ui.primary.buttons .active.button,
-.ui.primary.button.active {
+.ui.primary.active.button {
   background-color: #3576ac;
   color: #ffffff;
   text-shadow: none;
@@ -3138,7 +3143,7 @@ a:hover {
 }
 
 .ui.secondary.buttons .active.button,
-.ui.secondary.button.active {
+.ui.secondary.active.button {
   background-color: #0f0f10;
   color: #ffffff;
   text-shadow: none;
@@ -3163,7 +3168,7 @@ a:hover {
 .ui.positive.buttons .button:hover,
 .ui.positive.button:hover,
 .ui.positive.buttons .active.button,
-.ui.positive.button.active {
+.ui.positive.active.button {
   background-color: #66c17b !important;
   color: #ffffff;
   text-shadow: none;
@@ -3176,10 +3181,10 @@ a:hover {
   text-shadow: none;
 }
 
-.ui.positive.buttons .button.active,
-.ui.positive.buttons .button.active:active,
-.ui.positive.button.active,
-.ui.positive.button .button.active:active {
+.ui.positive.buttons .active.button,
+.ui.positive.buttons .active.button:active,
+.ui.positive.active.button,
+.ui.positive.button .active.button:active {
   background-color: #49b562;
   color: #ffffff;
   text-shadow: none;
@@ -3204,7 +3209,7 @@ a:hover {
 .ui.negative.buttons .button:hover,
 .ui.negative.button:hover,
 .ui.negative.buttons .active.button,
-.ui.negative.button.active {
+.ui.negative.active.button {
   background-color: #dc6868 !important;
   color: #ffffff;
   text-shadow: none;
@@ -3217,10 +3222,10 @@ a:hover {
   text-shadow: none;
 }
 
-.ui.negative.buttons .button.active,
-.ui.negative.buttons .button.active:active,
-.ui.negative.button.active,
-.ui.negative.button .button.active:active {
+.ui.negative.buttons .active.button,
+.ui.negative.buttons .active.button:active,
+.ui.negative.active.button,
+.ui.negative.button .active.button:active {
   background-color: #d44747;
   color: #ffffff;
   text-shadow: none;
@@ -3237,7 +3242,7 @@ a:hover {
 }
 
 .ui.buttons > .button:hover,
-.ui.buttons > .button.active {
+.ui.buttons > .active.button {
   position: relative;
 }
 
@@ -3322,7 +3327,7 @@ a:hover {
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -3571,7 +3576,1264 @@ a:hover {
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
+ * https://github.com/Semantic-Org/Semantic-UI
+ * http://www.semantic-ui.com/
+ *
+ * Copyright 2014 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+i.flag:not(.icon) {
+  display: inline-block;
+  width: 16px;
+  height: 11px;
+  line-height: 11px;
+  vertical-align: baseline;
+  margin: 0em 0.5em 0em 0em;
+  text-decoration: inherit;
+  speak: none;
+  font-smoothing: antialiased;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+i.flag:not(.icon):before {
+  display: inline-block;
+  content: '';
+  background: url("themes/default/assets/images/flags.png") no-repeat 0px 0px;
+  width: 16px;
+  height: 11px;
+}
+
+/* Flag Sprite Based On http://www.famfamfam.com/lab/icons/flags/ */
+
+/*******************************
+         Theme Overrides
+*******************************/
+
+i.flag.ad:before,
+i.flag.andorra:before {
+  background-position: 0px 0px;
+}
+
+i.flag.ae:before,
+i.flag.united.arab.emirates:before,
+i.flag.uae:before {
+  background-position: 0px -26px;
+}
+
+i.flag.af:before,
+i.flag.afghanistan:before {
+  background-position: 0px -52px;
+}
+
+i.flag.ag:before,
+i.flag.antigua:before {
+  background-position: 0px -78px;
+}
+
+i.flag.ai:before,
+i.flag.anguilla:before {
+  background-position: 0px -104px;
+}
+
+i.flag.al:before,
+i.flag.albania:before {
+  background-position: 0px -130px;
+}
+
+i.flag.am:before,
+i.flag.armenia:before {
+  background-position: 0px -156px;
+}
+
+i.flag.an:before,
+i.flag.netherlands.antilles:before {
+  background-position: 0px -182px;
+}
+
+i.flag.ao:before,
+i.flag.angola:before {
+  background-position: 0px -208px;
+}
+
+i.flag.ar:before,
+i.flag.argentina:before {
+  background-position: 0px -234px;
+}
+
+i.flag.as:before,
+i.flag.american.samoa:before {
+  background-position: 0px -260px;
+}
+
+i.flag.at:before,
+i.flag.austria:before {
+  background-position: 0px -286px;
+}
+
+i.flag.au:before,
+i.flag.australia:before {
+  background-position: 0px -312px;
+}
+
+i.flag.aw:before,
+i.flag.aruba:before {
+  background-position: 0px -338px;
+}
+
+i.flag.ax:before,
+i.flag.aland.islands:before {
+  background-position: 0px -364px;
+}
+
+i.flag.az:before,
+i.flag.azerbaijan:before {
+  background-position: 0px -390px;
+}
+
+i.flag.ba:before,
+i.flag.bosnia:before {
+  background-position: 0px -416px;
+}
+
+i.flag.bb:before,
+i.flag.barbados:before {
+  background-position: 0px -442px;
+}
+
+i.flag.bd:before,
+i.flag.bangladesh:before {
+  background-position: 0px -468px;
+}
+
+i.flag.be:before,
+i.flag.belgium:before {
+  background-position: 0px -494px;
+}
+
+i.flag.bf:before,
+i.flag.burkina.faso:before {
+  background-position: 0px -520px;
+}
+
+i.flag.bg:before,
+i.flag.bulgaria:before {
+  background-position: 0px -546px;
+}
+
+i.flag.bh:before,
+i.flag.bahrain:before {
+  background-position: 0px -572px;
+}
+
+i.flag.bi:before,
+i.flag.burundi:before {
+  background-position: 0px -598px;
+}
+
+i.flag.bj:before,
+i.flag.benin:before {
+  background-position: 0px -624px;
+}
+
+i.flag.bm:before,
+i.flag.bermuda:before {
+  background-position: 0px -650px;
+}
+
+i.flag.bn:before,
+i.flag.brunei:before {
+  background-position: 0px -676px;
+}
+
+i.flag.bo:before,
+i.flag.bolivia:before {
+  background-position: 0px -702px;
+}
+
+i.flag.br:before,
+i.flag.brazil:before {
+  background-position: 0px -728px;
+}
+
+i.flag.bs:before,
+i.flag.bahamas:before {
+  background-position: 0px -754px;
+}
+
+i.flag.bt:before,
+i.flag.bhutan:before {
+  background-position: 0px -780px;
+}
+
+i.flag.bv:before,
+i.flag.bouvet.island:before {
+  background-position: 0px -806px;
+}
+
+i.flag.bw:before,
+i.flag.botswana:before {
+  background-position: 0px -832px;
+}
+
+i.flag.by:before,
+i.flag.belarus:before {
+  background-position: 0px -858px;
+}
+
+i.flag.bz:before,
+i.flag.belize:before {
+  background-position: 0px -884px;
+}
+
+i.flag.ca:before,
+i.flag.canada:before {
+  background-position: 0px -910px;
+}
+
+i.flag.cc:before,
+i.flag.cocos.islands:before {
+  background-position: 0px -962px;
+}
+
+i.flag.cd:before,
+i.flag.congo:before {
+  background-position: 0px -988px;
+}
+
+i.flag.cf:before,
+i.flag.central.african.republic:before {
+  background-position: 0px -1014px;
+}
+
+i.flag.cg:before,
+i.flag.congo.brazzaville:before {
+  background-position: 0px -1040px;
+}
+
+i.flag.ch:before,
+i.flag.switzerland:before {
+  background-position: 0px -1066px;
+}
+
+i.flag.ci:before,
+i.flag.cote.divoire:before {
+  background-position: 0px -1092px;
+}
+
+i.flag.ck:before,
+i.flag.cook.islands:before {
+  background-position: 0px -1118px;
+}
+
+i.flag.cl:before,
+i.flag.chile:before {
+  background-position: 0px -1144px;
+}
+
+i.flag.cm:before,
+i.flag.cameroon:before {
+  background-position: 0px -1170px;
+}
+
+i.flag.cn:before,
+i.flag.china:before {
+  background-position: 0px -1196px;
+}
+
+i.flag.co:before,
+i.flag.colombia:before {
+  background-position: 0px -1222px;
+}
+
+i.flag.cr:before,
+i.flag.costa.rica:before {
+  background-position: 0px -1248px;
+}
+
+i.flag.cs:before,
+i.flag.serbia:before {
+  background-position: 0px -1274px;
+}
+
+i.flag.cu:before,
+i.flag.cuba:before {
+  background-position: 0px -1300px;
+}
+
+i.flag.cv:before,
+i.flag.cape.verde:before {
+  background-position: 0px -1326px;
+}
+
+i.flag.cx:before,
+i.flag.christmas.island:before {
+  background-position: 0px -1352px;
+}
+
+i.flag.cy:before,
+i.flag.cyprus:before {
+  background-position: 0px -1378px;
+}
+
+i.flag.cz:before,
+i.flag.czech.republic:before {
+  background-position: 0px -1404px;
+}
+
+i.flag.de:before,
+i.flag.germany:before {
+  background-position: 0px -1430px;
+}
+
+i.flag.dj:before,
+i.flag.djibouti:before {
+  background-position: 0px -1456px;
+}
+
+i.flag.dk:before,
+i.flag.denmark:before {
+  background-position: 0px -1482px;
+}
+
+i.flag.dm:before,
+i.flag.dominica:before {
+  background-position: 0px -1508px;
+}
+
+i.flag.do:before,
+i.flag.dominican.republic:before {
+  background-position: 0px -1534px;
+}
+
+i.flag.dz:before,
+i.flag.algeria:before {
+  background-position: 0px -1560px;
+}
+
+i.flag.ec:before,
+i.flag.ecuador:before {
+  background-position: 0px -1586px;
+}
+
+i.flag.ee:before,
+i.flag.estonia:before {
+  background-position: 0px -1612px;
+}
+
+i.flag.eg:before,
+i.flag.egypt:before {
+  background-position: 0px -1638px;
+}
+
+i.flag.eh:before,
+i.flag.western.sahara:before {
+  background-position: 0px -1664px;
+}
+
+i.flag.er:before,
+i.flag.eritrea:before {
+  background-position: 0px -1716px;
+}
+
+i.flag.es:before,
+i.flag.spain:before {
+  background-position: 0px -1742px;
+}
+
+i.flag.et:before,
+i.flag.ethiopia:before {
+  background-position: 0px -1768px;
+}
+
+i.flag.eu:before,
+i.flag.european.union:before {
+  background-position: 0px -1794px;
+}
+
+i.flag.fi:before,
+i.flag.finland:before {
+  background-position: 0px -1846px;
+}
+
+i.flag.fj:before,
+i.flag.fiji:before {
+  background-position: 0px -1872px;
+}
+
+i.flag.fk:before,
+i.flag.falkland.islands:before {
+  background-position: 0px -1898px;
+}
+
+i.flag.fm:before,
+i.flag.micronesia:before {
+  background-position: 0px -1924px;
+}
+
+i.flag.fo:before,
+i.flag.faroe.islands:before {
+  background-position: 0px -1950px;
+}
+
+i.flag.fr:before,
+i.flag.france:before {
+  background-position: 0px -1976px;
+}
+
+i.flag.ga:before,
+i.flag.gabon:before {
+  background-position: -36px 0px;
+}
+
+i.flag.gb:before,
+i.flag.united.kingdom:before {
+  background-position: -36px -26px;
+}
+
+i.flag.gd:before,
+i.flag.grenada:before {
+  background-position: -36px -52px;
+}
+
+i.flag.ge:before,
+i.flag.georgia:before {
+  background-position: -36px -78px;
+}
+
+i.flag.gf:before,
+i.flag.french.guiana:before {
+  background-position: -36px -104px;
+}
+
+i.flag.gh:before,
+i.flag.ghana:before {
+  background-position: -36px -130px;
+}
+
+i.flag.gi:before,
+i.flag.gibraltar:before {
+  background-position: -36px -156px;
+}
+
+i.flag.gl:before,
+i.flag.greenland:before {
+  background-position: -36px -182px;
+}
+
+i.flag.gm:before,
+i.flag.gambia:before {
+  background-position: -36px -208px;
+}
+
+i.flag.gn:before,
+i.flag.guinea:before {
+  background-position: -36px -234px;
+}
+
+i.flag.gp:before,
+i.flag.guadeloupe:before {
+  background-position: -36px -260px;
+}
+
+i.flag.gq:before,
+i.flag.equatorial.guinea:before {
+  background-position: -36px -286px;
+}
+
+i.flag.gr:before,
+i.flag.greece:before {
+  background-position: -36px -312px;
+}
+
+i.flag.gs:before,
+i.flag.sandwich.islands:before {
+  background-position: -36px -338px;
+}
+
+i.flag.gt:before,
+i.flag.guatemala:before {
+  background-position: -36px -364px;
+}
+
+i.flag.gu:before,
+i.flag.guam:before {
+  background-position: -36px -390px;
+}
+
+i.flag.gw:before,
+i.flag.guinea-bissau:before {
+  background-position: -36px -416px;
+}
+
+i.flag.gy:before,
+i.flag.guyana:before {
+  background-position: -36px -442px;
+}
+
+i.flag.hk:before,
+i.flag.hong.kong:before {
+  background-position: -36px -468px;
+}
+
+i.flag.hm:before,
+i.flag.heard.island:before {
+  background-position: -36px -494px;
+}
+
+i.flag.hn:before,
+i.flag.honduras:before {
+  background-position: -36px -520px;
+}
+
+i.flag.hr:before,
+i.flag.croatia:before {
+  background-position: -36px -546px;
+}
+
+i.flag.ht:before,
+i.flag.haiti:before {
+  background-position: -36px -572px;
+}
+
+i.flag.hu:before,
+i.flag.hungary:before {
+  background-position: -36px -598px;
+}
+
+i.flag.id:before,
+i.flag.indonesia:before {
+  background-position: -36px -624px;
+}
+
+i.flag.ie:before,
+i.flag.ireland:before {
+  background-position: -36px -650px;
+}
+
+i.flag.il:before,
+i.flag.israel:before {
+  background-position: -36px -676px;
+}
+
+i.flag.in:before,
+i.flag.india:before {
+  background-position: -36px -702px;
+}
+
+i.flag.io:before,
+i.flag.indian.ocean.territory:before {
+  background-position: -36px -728px;
+}
+
+i.flag.iq:before,
+i.flag.iraq:before {
+  background-position: -36px -754px;
+}
+
+i.flag.ir:before,
+i.flag.iran:before {
+  background-position: -36px -780px;
+}
+
+i.flag.is:before,
+i.flag.iceland:before {
+  background-position: -36px -806px;
+}
+
+i.flag.it:before,
+i.flag.italy:before {
+  background-position: -36px -832px;
+}
+
+i.flag.jm:before,
+i.flag.jamaica:before {
+  background-position: -36px -858px;
+}
+
+i.flag.jo:before,
+i.flag.jordan:before {
+  background-position: -36px -884px;
+}
+
+i.flag.jp:before,
+i.flag.japan:before {
+  background-position: -36px -910px;
+}
+
+i.flag.ke:before,
+i.flag.kenya:before {
+  background-position: -36px -936px;
+}
+
+i.flag.kg:before,
+i.flag.kyrgyzstan:before {
+  background-position: -36px -962px;
+}
+
+i.flag.kh:before,
+i.flag.cambodia:before {
+  background-position: -36px -988px;
+}
+
+i.flag.ki:before,
+i.flag.kiribati:before {
+  background-position: -36px -1014px;
+}
+
+i.flag.km:before,
+i.flag.comoros:before {
+  background-position: -36px -1040px;
+}
+
+i.flag.kn:before,
+i.flag.saint.kitts.and.nevis:before {
+  background-position: -36px -1066px;
+}
+
+i.flag.kp:before,
+i.flag.north.korea:before {
+  background-position: -36px -1092px;
+}
+
+i.flag.kr:before,
+i.flag.south.korea:before {
+  background-position: -36px -1118px;
+}
+
+i.flag.kw:before,
+i.flag.kuwait:before {
+  background-position: -36px -1144px;
+}
+
+i.flag.ky:before,
+i.flag.cayman.islands:before {
+  background-position: -36px -1170px;
+}
+
+i.flag.kz:before,
+i.flag.kazakhstan:before {
+  background-position: -36px -1196px;
+}
+
+i.flag.la:before,
+i.flag.laos:before {
+  background-position: -36px -1222px;
+}
+
+i.flag.lb:before,
+i.flag.lebanon:before {
+  background-position: -36px -1248px;
+}
+
+i.flag.lc:before,
+i.flag.saint.lucia:before {
+  background-position: -36px -1274px;
+}
+
+i.flag.li:before,
+i.flag.liechtenstein:before {
+  background-position: -36px -1300px;
+}
+
+i.flag.lk:before,
+i.flag.sri.lanka:before {
+  background-position: -36px -1326px;
+}
+
+i.flag.lr:before,
+i.flag.liberia:before {
+  background-position: -36px -1352px;
+}
+
+i.flag.ls:before,
+i.flag.lesotho:before {
+  background-position: -36px -1378px;
+}
+
+i.flag.lt:before,
+i.flag.lithuania:before {
+  background-position: -36px -1404px;
+}
+
+i.flag.lu:before,
+i.flag.luxembourg:before {
+  background-position: -36px -1430px;
+}
+
+i.flag.lv:before,
+i.flag.latvia:before {
+  background-position: -36px -1456px;
+}
+
+i.flag.ly:before,
+i.flag.libya:before {
+  background-position: -36px -1482px;
+}
+
+i.flag.ma:before,
+i.flag.morocco:before {
+  background-position: -36px -1508px;
+}
+
+i.flag.mc:before,
+i.flag.monaco:before {
+  background-position: -36px -1534px;
+}
+
+i.flag.md:before,
+i.flag.moldova:before {
+  background-position: -36px -1560px;
+}
+
+i.flag.me:before,
+i.flag.montenegro:before {
+  background-position: -36px -1586px;
+}
+
+i.flag.mg:before,
+i.flag.madagascar:before {
+  background-position: -36px -1613px;
+}
+
+i.flag.mh:before,
+i.flag.marshall.islands:before {
+  background-position: -36px -1639px;
+}
+
+i.flag.mk:before,
+i.flag.macedonia:before {
+  background-position: -36px -1665px;
+}
+
+i.flag.ml:before,
+i.flag.mali:before {
+  background-position: -36px -1691px;
+}
+
+i.flag.mm:before,
+i.flag.myanmar:before,
+i.flag.burma:before {
+  background-position: -36px -1717px;
+}
+
+i.flag.mn:before,
+i.flag.mongolia:before {
+  background-position: -36px -1743px;
+}
+
+i.flag.mo:before,
+i.flag.macau:before {
+  background-position: -36px -1769px;
+}
+
+i.flag.mp:before,
+i.flag.northern.mariana.islands:before {
+  background-position: -36px -1795px;
+}
+
+i.flag.mq:before,
+i.flag.martinique:before {
+  background-position: -36px -1821px;
+}
+
+i.flag.mr:before,
+i.flag.mauritania:before {
+  background-position: -36px -1847px;
+}
+
+i.flag.ms:before,
+i.flag.montserrat:before {
+  background-position: -36px -1873px;
+}
+
+i.flag.mt:before,
+i.flag.malta:before {
+  background-position: -36px -1899px;
+}
+
+i.flag.mu:before,
+i.flag.mauritius:before {
+  background-position: -36px -1925px;
+}
+
+i.flag.mv:before,
+i.flag.maldives:before {
+  background-position: -36px -1951px;
+}
+
+i.flag.mw:before,
+i.flag.malawi:before {
+  background-position: -36px -1977px;
+}
+
+i.flag.mx:before,
+i.flag.mexico:before {
+  background-position: -72px 0px;
+}
+
+i.flag.my:before,
+i.flag.malaysia:before {
+  background-position: -72px -26px;
+}
+
+i.flag.mz:before,
+i.flag.mozambique:before {
+  background-position: -72px -52px;
+}
+
+i.flag.na:before,
+i.flag.namibia:before {
+  background-position: -72px -78px;
+}
+
+i.flag.nc:before,
+i.flag.new.caledonia:before {
+  background-position: -72px -104px;
+}
+
+i.flag.ne:before,
+i.flag.niger:before {
+  background-position: -72px -130px;
+}
+
+i.flag.nf:before,
+i.flag.norfolk.island:before {
+  background-position: -72px -156px;
+}
+
+i.flag.ng:before,
+i.flag.nigeria:before {
+  background-position: -72px -182px;
+}
+
+i.flag.ni:before,
+i.flag.nicaragua:before {
+  background-position: -72px -208px;
+}
+
+i.flag.nl:before,
+i.flag.netherlands:before {
+  background-position: -72px -234px;
+}
+
+i.flag.no:before,
+i.flag.norway:before {
+  background-position: -72px -260px;
+}
+
+i.flag.np:before,
+i.flag.nepal:before {
+  background-position: -72px -286px;
+}
+
+i.flag.nr:before,
+i.flag.nauru:before {
+  background-position: -72px -312px;
+}
+
+i.flag.nu:before,
+i.flag.niue:before {
+  background-position: -72px -338px;
+}
+
+i.flag.nz:before,
+i.flag.new.zealand:before {
+  background-position: -72px -364px;
+}
+
+i.flag.om:before,
+i.flag.oman:before {
+  background-position: -72px -390px;
+}
+
+i.flag.pa:before,
+i.flag.panama:before {
+  background-position: -72px -416px;
+}
+
+i.flag.pe:before,
+i.flag.peru:before {
+  background-position: -72px -442px;
+}
+
+i.flag.pf:before,
+i.flag.french.polynesia:before {
+  background-position: -72px -468px;
+}
+
+i.flag.pg:before,
+i.flag.new.guinea:before {
+  background-position: -72px -494px;
+}
+
+i.flag.ph:before,
+i.flag.philippines:before {
+  background-position: -72px -520px;
+}
+
+i.flag.pk:before,
+i.flag.pakistan:before {
+  background-position: -72px -546px;
+}
+
+i.flag.pl:before,
+i.flag.poland:before {
+  background-position: -72px -572px;
+}
+
+i.flag.pm:before,
+i.flag.saint.pierre:before {
+  background-position: -72px -598px;
+}
+
+i.flag.pn:before,
+i.flag.pitcairn.islands:before {
+  background-position: -72px -624px;
+}
+
+i.flag.pr:before,
+i.flag.puerto.rico:before {
+  background-position: -72px -650px;
+}
+
+i.flag.ps:before,
+i.flag.palestine:before {
+  background-position: -72px -676px;
+}
+
+i.flag.pt:before,
+i.flag.portugal:before {
+  background-position: -72px -702px;
+}
+
+i.flag.pw:before,
+i.flag.palau:before {
+  background-position: -72px -728px;
+}
+
+i.flag.py:before,
+i.flag.paraguay:before {
+  background-position: -72px -754px;
+}
+
+i.flag.qa:before,
+i.flag.qatar:before {
+  background-position: -72px -780px;
+}
+
+i.flag.re:before,
+i.flag.reunion:before {
+  background-position: -72px -806px;
+}
+
+i.flag.ro:before,
+i.flag.romania:before {
+  background-position: -72px -832px;
+}
+
+i.flag.rs:before,
+i.flag.serbia:before {
+  background-position: -72px -858px;
+}
+
+i.flag.ru:before,
+i.flag.russia:before {
+  background-position: -72px -884px;
+}
+
+i.flag.rw:before,
+i.flag.rwanda:before {
+  background-position: -72px -910px;
+}
+
+i.flag.sa:before,
+i.flag.saudi.arabia:before {
+  background-position: -72px -936px;
+}
+
+i.flag.sb:before,
+i.flag.solomon.islands:before {
+  background-position: -72px -962px;
+}
+
+i.flag.sc:before,
+i.flag.seychelles:before {
+  background-position: -72px -988px;
+}
+
+i.flag.sd:before,
+i.flag.sudan:before {
+  background-position: -72px -1040px;
+}
+
+i.flag.se:before,
+i.flag.sweden:before {
+  background-position: -72px -1066px;
+}
+
+i.flag.sg:before,
+i.flag.singapore:before {
+  background-position: -72px -1092px;
+}
+
+i.flag.sh:before,
+i.flag.saint.helena:before {
+  background-position: -72px -1118px;
+}
+
+i.flag.si:before,
+i.flag.slovenia:before {
+  background-position: -72px -1144px;
+}
+
+i.flag.sj:before,
+i.flag.svalbard:before,
+i.flag.jan.mayen:before {
+  background-position: -72px -1170px;
+}
+
+i.flag.sk:before,
+i.flag.slovakia:before {
+  background-position: -72px -1196px;
+}
+
+i.flag.sl:before,
+i.flag.sierra.leone:before {
+  background-position: -72px -1222px;
+}
+
+i.flag.sm:before,
+i.flag.san.marino:before {
+  background-position: -72px -1248px;
+}
+
+i.flag.sn:before,
+i.flag.senegal:before {
+  background-position: -72px -1274px;
+}
+
+i.flag.so:before,
+i.flag.somalia:before {
+  background-position: -72px -1300px;
+}
+
+i.flag.sr:before,
+i.flag.suriname:before {
+  background-position: -72px -1326px;
+}
+
+i.flag.st:before,
+i.flag.sao.tome:before {
+  background-position: -72px -1352px;
+}
+
+i.flag.sv:before,
+i.flag.el.salvador:before {
+  background-position: -72px -1378px;
+}
+
+i.flag.sy:before,
+i.flag.syria:before {
+  background-position: -72px -1404px;
+}
+
+i.flag.sz:before,
+i.flag.swaziland:before {
+  background-position: -72px -1430px;
+}
+
+i.flag.tc:before,
+i.flag.caicos.islands:before {
+  background-position: -72px -1456px;
+}
+
+i.flag.td:before,
+i.flag.chad:before {
+  background-position: -72px -1482px;
+}
+
+i.flag.tf:before,
+i.flag.french.territories:before {
+  background-position: -72px -1508px;
+}
+
+i.flag.tg:before,
+i.flag.togo:before {
+  background-position: -72px -1534px;
+}
+
+i.flag.th:before,
+i.flag.thailand:before {
+  background-position: -72px -1560px;
+}
+
+i.flag.tj:before,
+i.flag.tajikistan:before {
+  background-position: -72px -1586px;
+}
+
+i.flag.tk:before,
+i.flag.tokelau:before {
+  background-position: -72px -1612px;
+}
+
+i.flag.tl:before,
+i.flag.timorleste:before {
+  background-position: -72px -1638px;
+}
+
+i.flag.tm:before,
+i.flag.turkmenistan:before {
+  background-position: -72px -1664px;
+}
+
+i.flag.tn:before,
+i.flag.tunisia:before {
+  background-position: -72px -1690px;
+}
+
+i.flag.to:before,
+i.flag.tonga:before {
+  background-position: -72px -1716px;
+}
+
+i.flag.tr:before,
+i.flag.turkey:before {
+  background-position: -72px -1742px;
+}
+
+i.flag.tt:before,
+i.flag.trinidad:before {
+  background-position: -72px -1768px;
+}
+
+i.flag.tv:before,
+i.flag.tuvalu:before {
+  background-position: -72px -1794px;
+}
+
+i.flag.tw:before,
+i.flag.taiwan:before {
+  background-position: -72px -1820px;
+}
+
+i.flag.tz:before,
+i.flag.tanzania:before {
+  background-position: -72px -1846px;
+}
+
+i.flag.ua:before,
+i.flag.ukraine:before {
+  background-position: -72px -1872px;
+}
+
+i.flag.ug:before,
+i.flag.uganda:before {
+  background-position: -72px -1898px;
+}
+
+i.flag.um:before,
+i.flag.us.minor.islands:before {
+  background-position: -72px -1924px;
+}
+
+i.flag.us:before,
+i.flag.america:before,
+i.flag.united.states:before {
+  background-position: -72px -1950px;
+}
+
+i.flag.uy:before,
+i.flag.uruguay:before {
+  background-position: -72px -1976px;
+}
+
+i.flag.uz:before,
+i.flag.uzbekistan:before {
+  background-position: -108px 0px;
+}
+
+i.flag.va:before,
+i.flag.vatican.city:before {
+  background-position: -108px -26px;
+}
+
+i.flag.vc:before,
+i.flag.saint.vincent:before {
+  background-position: -108px -52px;
+}
+
+i.flag.ve:before,
+i.flag.venezuela:before {
+  background-position: -108px -78px;
+}
+
+i.flag.vg:before,
+i.flag.british.virgin.islands:before {
+  background-position: -108px -104px;
+}
+
+i.flag.vi:before,
+i.flag.us.virgin.islands:before {
+  background-position: -108px -130px;
+}
+
+i.flag.vn:before,
+i.flag.vietnam:before {
+  background-position: -108px -156px;
+}
+
+i.flag.vu:before,
+i.flag.vanuatu:before {
+  background-position: -108px -182px;
+}
+
+i.flag.wf:before,
+i.flag.wallis.and.futuna:before {
+  background-position: -108px -234px;
+}
+
+i.flag.ws:before,
+i.flag.samoa:before {
+  background-position: -108px -260px;
+}
+
+i.flag.ye:before,
+i.flag.yemen:before {
+  background-position: -108px -286px;
+}
+
+i.flag.yt:before,
+i.flag.mayotte:before {
+  background-position: -108px -312px;
+}
+
+i.flag.za:before,
+i.flag.south.africa:before {
+  background-position: -108px -338px;
+}
+
+i.flag.zm:before,
+i.flag.zambia:before {
+  background-position: -108px -364px;
+}
+
+i.flag.zw:before,
+i.flag.zimbabwe:before {
+  background-position: -108px -390px;
+}
+
+/*******************************
+         Site Overrides
+*******************************/
+
+/*
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -4185,7 +5447,7 @@ a.ui.inverted.yellow.header:hover {
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -4566,7 +5828,7 @@ i.massive.icon {
 
 /*
  * # Semantic - Icon
- * http://github.com/jlukic/semantic-ui/
+ * http://github.com/semantic-org/semantic-ui/
  *
  *
  * Copyright 2014 Contributor
@@ -6906,7 +8168,7 @@ i.icon.weixin:before {
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -6930,9 +8192,9 @@ i.icon.weixin:before {
 
 img.ui.image {
   display: block;
-  background: none;
 }
 
+.ui.image svg,
 .ui.image img {
   display: block;
   max-width: 100%;
@@ -6957,6 +8219,7 @@ img.ui.image {
 ---------------*/
 
 .ui.inline.image,
+.ui.inline.image svg,
 .ui.inline.image img {
   display: inline-block;
 }
@@ -6967,6 +8230,7 @@ img.ui.image {
 
 .ui.top.aligned.images .image,
 .ui.top.aligned.image,
+.ui.top.aligned.image svg,
 .ui.top.aligned.image img {
   display: inline-block;
   vertical-align: top;
@@ -6974,6 +8238,7 @@ img.ui.image {
 
 .ui.middle.aligned.images .image,
 .ui.middle.aligned.image,
+.ui.middle.aligned.image svg,
 .ui.middle.aligned.image img {
   display: inline-block;
   vertical-align: middle;
@@ -6981,6 +8246,7 @@ img.ui.image {
 
 .ui.bottom.aligned.images .image,
 .ui.bottom.aligned.image,
+.ui.bottom.aligned.image svg,
 .ui.bottom.aligned.image img {
   display: inline-block;
   vertical-align: bottom;
@@ -6992,7 +8258,9 @@ img.ui.image {
 
 .ui.rounded.images .image,
 .ui.rounded.images img,
+.ui.rounded.images svg,
 .ui.rounded.image img,
+.ui.rounded.image svg,
 .ui.rounded.image {
   border-radius: 0.3125em;
 }
@@ -7003,7 +8271,9 @@ img.ui.image {
 
 .ui.bordered.images .image,
 .ui.bordered.images img,
+.ui.bordered.images svg,
 .ui.bordered.image img,
+.ui.bordered.image svg,
 img.ui.bordered.image {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -7019,7 +8289,9 @@ img.ui.bordered.image {
 
 .ui.circular.images .image,
 .ui.circular.images img,
+.ui.circular.images svg,
 .ui.circular.image img,
+.ui.circular.image svg,
 .ui.circular.image {
   border-radius: 500rem;
 }
@@ -7031,6 +8303,8 @@ img.ui.bordered.image {
 .ui.fluid.images,
 .ui.fluid.image,
 .ui.fluid.images img,
+.ui.fluid.images svg,
+.ui.fluid.image svg,
 .ui.fluid.image img {
   display: block;
   width: 100%;
@@ -7042,7 +8316,9 @@ img.ui.bordered.image {
 
 .ui.avatar.images .image,
 .ui.avatar.images img,
+.ui.avatar.images svg,
 .ui.avatar.image img,
+.ui.avatar.image svg,
 .ui.avatar.image {
   margin-right: 0.25em;
   display: inline-block;
@@ -7087,6 +8363,7 @@ img.ui.bordered.image {
 
 .ui.mini.images .image,
 .ui.mini.images img,
+.ui.mini.images svg,
 .ui.mini.image {
   width: 20px;
   font-size: 0.71428571rem;
@@ -7094,6 +8371,7 @@ img.ui.bordered.image {
 
 .ui.tiny.images .image,
 .ui.tiny.images img,
+.ui.tiny.images svg,
 .ui.tiny.image {
   width: 80px;
   font-size: 0.85714286rem;
@@ -7101,6 +8379,7 @@ img.ui.bordered.image {
 
 .ui.small.images .image,
 .ui.small.images img,
+.ui.small.images svg,
 .ui.small.image {
   width: 150px;
   font-size: 0.92857143rem;
@@ -7108,6 +8387,7 @@ img.ui.bordered.image {
 
 .ui.medium.images .image,
 .ui.medium.images img,
+.ui.medium.images svg,
 .ui.medium.image {
   width: 300px;
   font-size: 1rem;
@@ -7115,6 +8395,7 @@ img.ui.bordered.image {
 
 .ui.large.images .image,
 .ui.large.images img,
+.ui.large.images svg,
 .ui.large.image {
   width: 450px;
   font-size: 1.14285714rem;
@@ -7122,6 +8403,7 @@ img.ui.bordered.image {
 
 .ui.big.images .image,
 .ui.big.images img,
+.ui.big.images svg,
 .ui.big.image {
   width: 600px;
   font-size: 1.28571429rem;
@@ -7129,6 +8411,7 @@ img.ui.bordered.image {
 
 .ui.huge.images .image,
 .ui.huge.images img,
+.ui.huge.images svg,
 .ui.huge.image {
   width: 800px;
   font-size: 1.42857143rem;
@@ -7136,6 +8419,7 @@ img.ui.bordered.image {
 
 .ui.massive.images .image,
 .ui.massive.images img,
+.ui.massive.images svg,
 .ui.massive.image {
   width: 960px;
   font-size: 1.71428571rem;
@@ -7151,7 +8435,8 @@ img.ui.bordered.image {
 }
 
 .ui.images .image,
-.ui.images img {
+.ui.images img,
+.ui.images svg {
   display: inline-block;
   margin: 0em 0.25rem 0.5rem;
 }
@@ -7165,7 +8450,7 @@ img.ui.bordered.image {
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -7196,7 +8481,7 @@ img.ui.bordered.image {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   text-align: left;
   line-height: 1.2142em;
-  font-family: "Helvetica Neue", "Helvetica", Arial;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   padding: 0.67861em 1em;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -7241,7 +8526,7 @@ img.ui.bordered.image {
        Loading
 ---------------------*/
 
-.ui.loading.loading.input > .icon:before {
+.ui.loading.loading.input > i.icon:before {
   position: absolute;
   content: '';
   top: 50%;
@@ -7253,7 +8538,7 @@ img.ui.bordered.image {
   border: 0.2em solid rgba(0, 0, 0, 0.1);
 }
 
-.ui.loading.loading.input > .icon:after {
+.ui.loading.loading.input > i.icon:after {
   position: absolute;
   content: '';
   top: 50%;
@@ -7279,7 +8564,7 @@ img.ui.bordered.image {
 .ui.input.focus input,
 .ui.input input:focus {
   border-color: rgba(39, 41, 43, 0.3);
-  background: '';
+  background: #ffffff;
   color: rgba(0, 0, 0, 0.8);
   box-shadow: none;
 }
@@ -7341,7 +8626,7 @@ img.ui.bordered.image {
 
 /* Transparent Icon */
 
-.ui.transparent.icon.input > .icon {
+.ui.transparent.icon.input > i.icon {
   width: 1.25em;
 }
 
@@ -7373,7 +8658,7 @@ img.ui.bordered.image {
          Icon
 ---------------------*/
 
-.ui.icon.input > .icon {
+.ui.icon.input > i.icon {
   cursor: default;
   position: absolute;
   text-align: center;
@@ -7388,8 +8673,12 @@ img.ui.bordered.image {
   transition: opacity 0.3s ease;
 }
 
-.ui.icon.input > .icon:before,
-.ui.icon.input > .icon:after {
+.ui.icon.input input {
+  padding-right: 2.82142em !important;
+}
+
+.ui.icon.input > i.icon:before,
+.ui.icon.input > i.icon:after {
   left: 0;
   position: absolute;
   text-align: center;
@@ -7398,28 +8687,24 @@ img.ui.bordered.image {
   margin-top: -0.5em;
 }
 
-.ui.icon.input > .link.icon {
+.ui.icon.input > i.link.icon {
   cursor: pointer;
 }
 
-.ui.icon.input input {
-  padding-right: 2.82142em !important;
-}
-
-.ui.icon.input > .circular.icon {
+.ui.icon.input > i.circular.icon {
   top: 0.35em;
   right: 0.5em;
 }
 
 /* Left Icon Input */
 
-.ui[class*="left icon"].input > .icon {
+.ui[class*="left icon"].input > i.icon {
   right: auto;
   left: 1px;
   border-radius: 0.2857rem 0em 0em 0.2857rem;
 }
 
-.ui[class*="left icon"].input > .circular.icon {
+.ui[class*="left icon"].input > i.circular.icon {
   right: auto;
   left: 0.5em;
 }
@@ -7431,7 +8716,7 @@ img.ui.bordered.image {
 
 /* Focus */
 
-.ui.icon.input > input:focus ~ .icon {
+.ui.icon.input > input:focus ~ i.icon {
   opacity: 1;
 }
 
@@ -7654,7 +8939,7 @@ img.ui.bordered.image {
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -7762,6 +9047,26 @@ a.ui.label {
 /*-------------------
        Coupling
 --------------------*/
+
+/* Remove border radius on attached segment */
+
+.ui.attached.segment > .ui.top.left.attached.label,
+.ui.bottom.attached.segment > .ui.top.left.attached.label {
+  border-radius-top-left: 0;
+}
+
+.ui.attached.segment > .ui.top.right.attached.label,
+.ui.bottom.attached.segment > .ui.top.right.attached.label {
+  border-radius-top-right: 0;
+}
+
+.ui.top.attached.segment > .ui.bottom.left.attached.label {
+  border-radius-bottom-left: 0;
+}
+
+.ui.top.attached.segment > .ui.bottom.right.attached.label {
+  border-radius-bottom-right: 0;
+}
 
 /* Padding on next content after a label */
 
@@ -7900,49 +9205,6 @@ a.ui.label {
   margin: 0em;
 }
 
-/* Text Label
-.ui.text.corner.label {
-  font-weight: @cornerTextWeight;
-  text-align: center;
-  padding: 0.25em 0;
-  top: 1.1em;
-  transform: rotate(45deg);
-  width: 4em;
-  height: auto;
-}
-.ui.left.text.corner.label {
-  transform: rotate(-45deg);
-}
-.ui.text.corner.label:before,
-.ui.text.corner.label:after {
-  position: absolute;
-  content: '';
-  top: 0em;
-  width: 0em;
-  height: 0em;
-}
-.ui.text.corner.label:before {
-  left: auto;
-  right: 100%;
-  border-top: 0em solid transparent;
-  border-right-width: @ribbonTriangleSize;
-  border-right-color: inherit;
-  border-right-style: solid;
-  border-bottom: @ribbonTriangleSize solid transparent;
-  border-left: 0em solid transparent;
-}
-.ui.text.corner.label:after {
-  left: 100%;
-  right: auto;
-  border-top: 0em solid transparent;
-  border-right-width: @ribbonTriangleSize;
-  border-right-color: inherit;
-  border-right-style: solid;
-  border-bottom: @ribbonTriangleSize solid transparent;
-  border-left: 0em solid transparent;
-}
-*/
-
 /* Left Corner */
 
 .ui.left.corner.label,
@@ -8006,14 +9268,33 @@ a.ui.label {
   top: 100%;
   left: 0%;
   background-color: transparent !important;
-  border-top: 0em solid transparent;
-  border-right-width: 1.2em;
+  border-style: solid;
+  border-width: 0em 1.2em 1.2em 0em;
+  border-color: transparent;
   border-right-color: inherit;
-  border-right-style: solid;
-  border-bottom: 1.2em solid transparent;
-  border-left: 0em solid transparent;
   width: 0em;
   height: 0em;
+}
+
+.ui[class*="right ribbon"].label {
+  text-align: left;
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+  left: -webkit-calc(100% +  2rem );
+  left: calc(100% +  2rem );
+  border-radius: 0.2857rem 0em 0em 0.2857rem;
+  padding-left: 0.8em;
+  padding-right: 2rem;
+}
+
+.ui[class*="right ribbon"].label:after {
+  left: auto;
+  right: 0%;
+  border-style: solid;
+  border-width: 1.2em 1.2em 0em 0em;
+  border-color: transparent;
+  border-top-color: inherit;
 }
 
 /*-------------------
@@ -8054,7 +9335,7 @@ a.ui.label {
   width: auto;
   top: auto;
   bottom: 0em;
-  border-radius: 0em 0em 0.2857rem 0.2857rem;
+  border-radius: 0em 0.2857rem 0em 0.2857rem;
 }
 
 .ui.bottom.right.attached.label {
@@ -8581,7 +9862,7 @@ a.ui.yellow.label:hover:before {
 
 .ui.pointing.left.label {
   margin-top: 0em;
-  margin-left: 0em;
+  margin-left: 0.6em;
 }
 
 .ui.pointing.left.label:before {
@@ -8596,7 +9877,7 @@ a.ui.yellow.label:hover:before {
 
 .ui.pointing.right.label {
   margin-top: 0em;
-  margin-right: 0em;
+  margin-right: 0.6em;
 }
 
 .ui.pointing.right.label:before {
@@ -8672,7 +9953,7 @@ a.ui.yellow.label:hover:before {
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -8763,8 +10044,8 @@ ol.ui.list ol,
 
 /* Icon */
 
-.ui.list .list > .item > .icon,
-.ui.list > .item > .icon {
+.ui.list .list > .item > i.icon,
+.ui.list > .item > i.icon {
   display: table-cell;
   margin: 0em;
   padding-top: 0.1rem;
@@ -8774,13 +10055,13 @@ ol.ui.list ol,
   transition: color 0.2s ease;
 }
 
-.ui.list .list > .item [class*="top aligned"].icon,
-.ui.list > .item > [class*="top aligned"].icon {
+.ui.list .list > .item [class*="top aligned"]i.icon,
+.ui.list > .item > [class*="top aligned"]i.icon {
   vertical-align: top;
 }
 
-.ui.list .list > .item > .icon:only-child,
-.ui.list > .item > .icon:only-child {
+.ui.list .list > .item > i.icon:only-child,
+.ui.list > .item > i.icon:only-child {
   display: inline-block;
   vertical-align: top;
 }
@@ -8869,8 +10150,8 @@ ol.ui.list ol,
 
 /* Linked Item Icons */
 
-.ui.list .list > a.item .icon,
-.ui.list > a.item .icon {
+.ui.list .list > a.item i.icon,
+.ui.list > a.item i.icon {
   color: rgba(0, 0, 0, 0.4);
 }
 
@@ -8985,7 +10266,7 @@ ol.ui.list ol,
 
 /* Horizontal List */
 
-.ui.horizontal.list > .item > .icon {
+.ui.horizontal.list > .item > i.icon {
   margin: 0em;
   padding: 0em 0.25em 0em 0em;
 }
@@ -9673,7 +10954,7 @@ ol.ui.horizontal.list li:before,
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -9970,7 +11251,7 @@ ol.ui.horizontal.list li:before,
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -10095,7 +11376,7 @@ ol.ui.horizontal.list li:before,
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -10404,7 +11685,7 @@ ol.ui.horizontal.list li:before,
 }
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -10453,15 +11734,10 @@ ol.ui.horizontal.list li:before,
   background-color: transparent;
   border-radius: 0px;
   border: none;
-  box-shadow: 0px 1px 0px rgba(39, 41, 43, 0.15);
-}
-
-.ui[class*="vertical segment"]:first-child {
-  padding-top: 0em;
+  box-shadow: 0px -1px 0px rgba(39, 41, 43, 0.15) inset;
 }
 
 .ui[class*="vertical segment"]:last-child {
-  padding-bottom: 0em;
   box-shadow: none;
 }
 
@@ -11067,7 +12343,7 @@ ol.ui.horizontal.list li:before,
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -11089,7 +12365,7 @@ ol.ui.horizontal.list li:before,
   vertical-align: top;
   background: #ffffff;
   color: rgba(0, 0, 0, 0.8);
-  box-shadow: 0px 0px 0px 1px rgba(39, 41, 43, 0.15);
+  box-shadow: 0px 0px 0px 1px #d4d4d5;
   border-radius: 0em;
 }
 
@@ -11176,10 +12452,12 @@ ol.ui.horizontal.list li:before,
 .ui.ordered.steps .step:before {
   display: table-cell;
   position: static;
+  text-align: center;
+  content: counters(ordered, ".");
+  vertical-align: middle;
   padding-right: 0.6em;
   font-size: 2em;
   counter-increment: ordered;
-  content: counters(ordered, ".");
 }
 
 .ui.ordered.steps .step > * {
@@ -11220,6 +12498,39 @@ ol.ui.horizontal.list li:before,
 
 .ui.vertical.steps .active.step:after {
   display: block;
+}
+
+/*---------------
+    Responsive
+----------------*/
+
+/* Mobile (Default) */
+
+@media only screen and (max-width: 767px) {
+  .ui.steps {
+    overflow: visible;
+  }
+
+  .ui.steps .step {
+    display: block;
+    border-radius: 0em;
+    padding: 0.9285em 1.5em;
+  }
+
+  .ui.steps .step:first-child {
+    padding: 0.9285em 1.5em;
+    border-radius: 0.2857rem 0.2857rem 0em 0em;
+  }
+
+  .ui.steps .step:last-child {
+    border-radius: 0em 0em 0.2857rem 0.2857rem;
+  }
+
+  /* Arrow */
+
+  .ui.steps .step:after {
+    display: none;
+  }
 }
 
 /*******************************
@@ -11341,13 +12652,54 @@ ol.ui.horizontal.list li:before,
            Variations
 *******************************/
 
+/*--------------
+   Stackable
+---------------*/
+
+/* Tablet Or Below */
+
+@media only screen and (min-width: 992px) {
+  .ui[class*="tablet stackable"].steps {
+    overflow: visible;
+  }
+
+  .ui[class*="tablet stackable"].steps .step {
+    display: block;
+    border-radius: 0em;
+    padding: 0.9285em 1.5em;
+  }
+
+  .ui[class*="tablet stackable"].steps .step:first-child {
+    padding: 0.9285em 1.5em;
+    border-radius: 0.2857rem 0.2857rem 0em 0em;
+  }
+
+  .ui[class*="tablet stackable"].steps .step:last-child {
+    border-radius: 0em 0em 0.2857rem 0.2857rem;
+  }
+
+  /* Arrow */
+
+  .ui[class*="tablet stackable"].steps .step:after {
+    display: none;
+  }
+}
+
+/*--------------
+      Fluid
+---------------*/
+
 /* Fluid */
 
 .ui.fluid.steps {
   width: 100%;
 }
 
-/* Attached */
+/*--------------
+    Attached
+---------------*/
+
+/* Top */
 
 .attached.ui.steps {
   margin: 0em;
@@ -11362,10 +12714,10 @@ ol.ui.horizontal.list li:before,
   border-radius: 0em 0.2857rem 0em 0em;
 }
 
-/* Bottom Side */
+/* Bottom */
 
 .bottom.attached.ui.steps {
-  margin-top: -1px;
+  margin: -1px 0em 0em;
   border-radius: 0em 0em 0.2857rem 0.2857rem;
 }
 
@@ -11377,7 +12729,9 @@ ol.ui.horizontal.list li:before,
   border-radius: 0em 0em 0.2857rem 0em;
 }
 
-/* Evenly divided  */
+/*-------------------
+    Evenly Divided
+--------------------*/
 
 .ui.one.steps,
 .ui.two.steps,
@@ -11422,9 +12776,9 @@ ol.ui.horizontal.list li:before,
   width: 12.500%;
 }
 
-/*******************************
-             Sizes
-*******************************/
+/*-------------------
+       Sizes
+--------------------*/
 
 .ui.small.step,
 .ui.small.steps .step {
@@ -11454,6 +12808,7 @@ ol.ui.horizontal.list li:before,
 .ui.ordered.steps .step.completed:before {
   font-family: 'Step';
   content: '\e800';
+  /* '' */
 }
 
 /*******************************
@@ -11461,7 +12816,7 @@ ol.ui.horizontal.list li:before,
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -11593,7 +12948,7 @@ ol.ui.horizontal.list li:before,
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -11628,13 +12983,14 @@ ol.ui.horizontal.list li:before,
         Field
 ---------------------*/
 
+.ui.form .fields .field,
 .ui.form .field {
   clear: both;
   margin: 0em 0em 1em;
 }
 
-.ui.form .fields:last-child .field,
-.ui.form :not(.fields) .field:last-child {
+.ui.form .fields:last-child,
+.ui.form .field:last-child {
   margin-bottom: 0em;
 }
 
@@ -11674,9 +13030,11 @@ ol.ui.horizontal.list li:before,
 ---------------------*/
 
 .ui.form textarea,
+.ui.form input:not([type]),
 .ui.form input[type="text"],
 .ui.form input[type="email"],
 .ui.form input[type="date"],
+.ui.form input[type="datetime-local"],
 .ui.form input[type="password"],
 .ui.form input[type="number"],
 .ui.form input[type="url"],
@@ -11686,13 +13044,16 @@ ol.ui.horizontal.list li:before,
   vertical-align: top;
 }
 
+.ui.form input:not([type]),
 .ui.form input[type="text"],
 .ui.form input[type="email"],
 .ui.form input[type="date"],
+.ui.form input[type="datetime-local"],
 .ui.form input[type="password"],
 .ui.form input[type="number"],
 .ui.form input[type="url"],
 .ui.form input[type="tel"] {
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   margin: 0em;
   outline: none;
   -webkit-appearance: none;
@@ -11876,9 +13237,11 @@ ol.ui.horizontal.list li:before,
         Focus
 ---------------------*/
 
+.ui.form input:not([type]):focus,
 .ui.form input[type="text"]:focus,
 .ui.form input[type="email"]:focus,
 .ui.form input[type="date"]:focus,
+.ui.form input[type="datetime-local"]:focus,
 .ui.form input[type="password"]:focus,
 .ui.form input[type="number"]:focus,
 .ui.form input[type="url"]:focus,
@@ -11945,17 +13308,21 @@ ol.ui.horizontal.list li:before,
 }
 
 .ui.form .fields.error .field textarea,
+.ui.form .fields.error .field input:not([type]),
 .ui.form .fields.error .field input[type="text"],
 .ui.form .fields.error .field input[type="email"],
 .ui.form .fields.error .field input[type="date"],
+.ui.form .fields.error .field input[type="datetime-local"],
 .ui.form .fields.error .field input[type="password"],
 .ui.form .fields.error .field input[type="number"],
 .ui.form .fields.error .field input[type="url"],
 .ui.form .fields.error .field input[type="tel"],
 .ui.form .field.error textarea,
+.ui.form .field.error input:not([type]),
 .ui.form .field.error input[type="text"],
 .ui.form .field.error input[type="email"],
 .ui.form .field.error input[type="date"],
+.ui.form .field.error input[type="datetime-local"],
 .ui.form .field.error input[type="password"],
 .ui.form .field.error input[type="number"],
 .ui.form .field.error input[type="url"],
@@ -11968,9 +13335,11 @@ ol.ui.horizontal.list li:before,
 }
 
 .ui.form .field.error textarea:focus,
+.ui.form .field.error input:not([type]):focus,
 .ui.form .field.error input[type="text"]:focus,
 .ui.form .field.error input[type="email"]:focus,
 .ui.form .field.error input[type="date"]:focus,
+.ui.form .field.error input[type="datetime-local"]:focus,
 .ui.form .field.error input[type="password"]:focus,
 .ui.form .field.error input[type="number"]:focus,
 .ui.form .field.error input[type="url"]:focus,
@@ -12298,8 +13667,19 @@ ol.ui.horizontal.list li:before,
   .ui.form .four.fields > .fields,
   .ui.form .four.fields > .field,
   .ui.form .five.fields > .fields,
-  .ui.form .five.fields > .field {
-    width: 100%;
+  .ui.form .five.fields > .field,
+  .ui.form .six.fields > .fields,
+  .ui.form .six.fields > .field,
+  .ui.form .seven.fields > .fields,
+  .ui.form .seven.fields > .field,
+  .ui.form .eight.fields > .fields,
+  .ui.form .eight.fields > .field,
+  .ui.form .nine.fields > .fields,
+  .ui.form .nine.fields > .field,
+  .ui.form .ten.fields > .fields,
+  .ui.form .ten.fields > .field {
+    width: 100% !important;
+    margin: 0em 0em 1em;
     padding-left: 0%;
     padding-right: 0%;
   }
@@ -12419,7 +13799,8 @@ ol.ui.horizontal.list li:before,
   .ui.form .fields > .fourteen.wide.field,
   .ui.form .fields > .fifteen.wide.field,
   .ui.form .fields > .sixteen.wide.field {
-    width: 100%;
+    width: 100% !important;
+    margin: 0em 0em 1em;
     padding-left: 0%;
     padding-right: 0%;
   }
@@ -12443,9 +13824,11 @@ ol.ui.horizontal.list li:before,
 .ui.form .inline.fields .field > label,
 .ui.form .inline.fields .field > p,
 .ui.form .inline.fields .field > input,
+.ui.form .inline.fields .field > .ui.input,
 .ui.form .inline.field > label,
 .ui.form .inline.field > p,
-.ui.form .inline.field > input {
+.ui.form .inline.field > input,
+.ui.form .inline.field > .ui.input {
   display: inline-block;
   width: auto;
   margin-top: 0em;
@@ -12455,7 +13838,9 @@ ol.ui.horizontal.list li:before,
 }
 
 .ui.form .inline.fields .field > input,
-.ui.form .inline.field > input {
+.ui.form .inline.fields .field > .ui.input,
+.ui.form .inline.field > input,
+.ui.form .inline.field > .ui.input {
   font-size: 0.9285em;
 }
 
@@ -12512,7 +13897,7 @@ ol.ui.horizontal.list li:before,
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -13003,121 +14388,123 @@ ol.ui.horizontal.list li:before,
 
 /* Mobile Sizing Combinations */
 
-.ui.grid > .row > [class*="one wide mobile"].column,
-.ui.grid > .column.row > [class*="one wide mobile"].column,
-.ui.grid > [class*="one wide mobile"].column,
-.ui.column.grid > [class*="one wide mobile"].column {
-  width: 6.25% !important;
-}
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .ui.grid > .row > [class*="one wide mobile"].column,
+  .ui.grid > .column.row > [class*="one wide mobile"].column,
+  .ui.grid > [class*="one wide mobile"].column,
+  .ui.column.grid > [class*="one wide mobile"].column {
+    width: 6.25% !important;
+  }
 
-.ui.grid > .row > [class*="two wide mobile"].column,
-.ui.grid > .column.row > [class*="two wide mobile"].column,
-.ui.grid > [class*="two wide mobile"].column,
-.ui.column.grid > [class*="two wide mobile"].column {
-  width: 12.5% !important;
-}
+  .ui.grid > .row > [class*="two wide mobile"].column,
+  .ui.grid > .column.row > [class*="two wide mobile"].column,
+  .ui.grid > [class*="two wide mobile"].column,
+  .ui.column.grid > [class*="two wide mobile"].column {
+    width: 12.5% !important;
+  }
 
-.ui.grid > .row > [class*="three wide mobile"].column,
-.ui.grid > .column.row > [class*="three wide mobile"].column,
-.ui.grid > [class*="three wide mobile"].column,
-.ui.column.grid > [class*="three wide mobile"].column {
-  width: 18.75% !important;
-}
+  .ui.grid > .row > [class*="three wide mobile"].column,
+  .ui.grid > .column.row > [class*="three wide mobile"].column,
+  .ui.grid > [class*="three wide mobile"].column,
+  .ui.column.grid > [class*="three wide mobile"].column {
+    width: 18.75% !important;
+  }
 
-.ui.grid > .row > [class*="four wide mobile"].column,
-.ui.grid > .column.row > [class*="four wide mobile"].column,
-.ui.grid > [class*="four wide mobile"].column,
-.ui.column.grid > [class*="four wide mobile"].column {
-  width: 25% !important;
-}
+  .ui.grid > .row > [class*="four wide mobile"].column,
+  .ui.grid > .column.row > [class*="four wide mobile"].column,
+  .ui.grid > [class*="four wide mobile"].column,
+  .ui.column.grid > [class*="four wide mobile"].column {
+    width: 25% !important;
+  }
 
-.ui.grid > .row > [class*="five wide mobile"].column,
-.ui.grid > .column.row > [class*="five wide mobile"].column,
-.ui.grid > [class*="five wide mobile"].column,
-.ui.column.grid > [class*="five wide mobile"].column {
-  width: 31.25% !important;
-}
+  .ui.grid > .row > [class*="five wide mobile"].column,
+  .ui.grid > .column.row > [class*="five wide mobile"].column,
+  .ui.grid > [class*="five wide mobile"].column,
+  .ui.column.grid > [class*="five wide mobile"].column {
+    width: 31.25% !important;
+  }
 
-.ui.grid > .row > [class*="six wide mobile"].column,
-.ui.grid > .column.row > [class*="six wide mobile"].column,
-.ui.grid > [class*="six wide mobile"].column,
-.ui.column.grid > [class*="six wide mobile"].column {
-  width: 37.5% !important;
-}
+  .ui.grid > .row > [class*="six wide mobile"].column,
+  .ui.grid > .column.row > [class*="six wide mobile"].column,
+  .ui.grid > [class*="six wide mobile"].column,
+  .ui.column.grid > [class*="six wide mobile"].column {
+    width: 37.5% !important;
+  }
 
-.ui.grid > .row > [class*="seven wide mobile"].column,
-.ui.grid > .column.row > [class*="seven wide mobile"].column,
-.ui.grid > [class*="seven wide mobile"].column,
-.ui.column.grid > [class*="seven wide mobile"].column {
-  width: 43.75% !important;
-}
+  .ui.grid > .row > [class*="seven wide mobile"].column,
+  .ui.grid > .column.row > [class*="seven wide mobile"].column,
+  .ui.grid > [class*="seven wide mobile"].column,
+  .ui.column.grid > [class*="seven wide mobile"].column {
+    width: 43.75% !important;
+  }
 
-.ui.grid > .row > [class*="eight wide mobile"].column,
-.ui.grid > .column.row > [class*="eight wide mobile"].column,
-.ui.grid > [class*="eight wide mobile"].column,
-.ui.column.grid > [class*="eight wide mobile"].column {
-  width: 50% !important;
-}
+  .ui.grid > .row > [class*="eight wide mobile"].column,
+  .ui.grid > .column.row > [class*="eight wide mobile"].column,
+  .ui.grid > [class*="eight wide mobile"].column,
+  .ui.column.grid > [class*="eight wide mobile"].column {
+    width: 50% !important;
+  }
 
-.ui.grid > .row > [class*="nine wide mobile"].column,
-.ui.grid > .column.row > [class*="nine wide mobile"].column,
-.ui.grid > [class*="nine wide mobile"].column,
-.ui.column.grid > [class*="nine wide mobile"].column {
-  width: 56.25% !important;
-}
+  .ui.grid > .row > [class*="nine wide mobile"].column,
+  .ui.grid > .column.row > [class*="nine wide mobile"].column,
+  .ui.grid > [class*="nine wide mobile"].column,
+  .ui.column.grid > [class*="nine wide mobile"].column {
+    width: 56.25% !important;
+  }
 
-.ui.grid > .row > [class*="ten wide mobile"].column,
-.ui.grid > .column.row > [class*="ten wide mobile"].column,
-.ui.grid > [class*="ten wide mobile"].column,
-.ui.column.grid > [class*="ten wide mobile"].column {
-  width: 62.5% !important;
-}
+  .ui.grid > .row > [class*="ten wide mobile"].column,
+  .ui.grid > .column.row > [class*="ten wide mobile"].column,
+  .ui.grid > [class*="ten wide mobile"].column,
+  .ui.column.grid > [class*="ten wide mobile"].column {
+    width: 62.5% !important;
+  }
 
-.ui.grid > .row > [class*="eleven wide mobile"].column,
-.ui.grid > .column.row > [class*="eleven wide mobile"].column,
-.ui.grid > [class*="eleven wide mobile"].column,
-.ui.column.grid > [class*="eleven wide mobile"].column {
-  width: 68.75% !important;
-}
+  .ui.grid > .row > [class*="eleven wide mobile"].column,
+  .ui.grid > .column.row > [class*="eleven wide mobile"].column,
+  .ui.grid > [class*="eleven wide mobile"].column,
+  .ui.column.grid > [class*="eleven wide mobile"].column {
+    width: 68.75% !important;
+  }
 
-.ui.grid > .row > [class*="twelve wide mobile"].column,
-.ui.grid > .column.row > [class*="twelve wide mobile"].column,
-.ui.grid > [class*="twelve wide mobile"].column,
-.ui.column.grid > [class*="twelve wide mobile"].column {
-  width: 75% !important;
-}
+  .ui.grid > .row > [class*="twelve wide mobile"].column,
+  .ui.grid > .column.row > [class*="twelve wide mobile"].column,
+  .ui.grid > [class*="twelve wide mobile"].column,
+  .ui.column.grid > [class*="twelve wide mobile"].column {
+    width: 75% !important;
+  }
 
-.ui.grid > .row > [class*="thirteen wide mobile"].column,
-.ui.grid > .column.row > [class*="thirteen wide mobile"].column,
-.ui.grid > [class*="thirteen wide mobile"].column,
-.ui.column.grid > [class*="thirteen wide mobile"].column {
-  width: 81.25% !important;
-}
+  .ui.grid > .row > [class*="thirteen wide mobile"].column,
+  .ui.grid > .column.row > [class*="thirteen wide mobile"].column,
+  .ui.grid > [class*="thirteen wide mobile"].column,
+  .ui.column.grid > [class*="thirteen wide mobile"].column {
+    width: 81.25% !important;
+  }
 
-.ui.grid > .row > [class*="fourteen wide mobile"].column,
-.ui.grid > .column.row > [class*="fourteen wide mobile"].column,
-.ui.grid > [class*="fourteen wide mobile"].column,
-.ui.column.grid > [class*="fourteen wide mobile"].column {
-  width: 87.5% !important;
-}
+  .ui.grid > .row > [class*="fourteen wide mobile"].column,
+  .ui.grid > .column.row > [class*="fourteen wide mobile"].column,
+  .ui.grid > [class*="fourteen wide mobile"].column,
+  .ui.column.grid > [class*="fourteen wide mobile"].column {
+    width: 87.5% !important;
+  }
 
-.ui.grid > .row > [class*="fifteen wide mobile"].column,
-.ui.grid > .column.row > [class*="fifteen wide mobile"].column,
-.ui.grid > [class*="fifteen wide mobile"].column,
-.ui.column.grid > [class*="fifteen wide mobile"].column {
-  width: 93.75% !important;
-}
+  .ui.grid > .row > [class*="fifteen wide mobile"].column,
+  .ui.grid > .column.row > [class*="fifteen wide mobile"].column,
+  .ui.grid > [class*="fifteen wide mobile"].column,
+  .ui.column.grid > [class*="fifteen wide mobile"].column {
+    width: 93.75% !important;
+  }
 
-.ui.grid > .row > [class*="sixteen wide mobile"].column,
-.ui.grid > .column.row > [class*="sixteen wide mobile"].column,
-.ui.grid > [class*="sixteen wide mobile"].column,
-.ui.column.grid > [class*="sixteen wide mobile"].column {
-  width: 100% !important;
+  .ui.grid > .row > [class*="sixteen wide mobile"].column,
+  .ui.grid > .column.row > [class*="sixteen wide mobile"].column,
+  .ui.grid > [class*="sixteen wide mobile"].column,
+  .ui.column.grid > [class*="sixteen wide mobile"].column {
+    width: 100% !important;
+  }
 }
 
 /* Tablet Sizing Combinations */
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) {
   .ui.grid > .row > [class*="one wide tablet"].column,
   .ui.grid > .column.row > [class*="one wide tablet"].column,
   .ui.grid > [class*="one wide tablet"].column,
@@ -13349,7 +14736,7 @@ ol.ui.horizontal.list li:before,
 
 /* Large Monitor Sizing Combinations */
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1400px) and (max-width: 1919px) {
   .ui.grid > .row > [class*="one wide large screen"].column,
   .ui.grid > .column.row > [class*="one wide large screen"].column,
   .ui.grid > [class*="one wide large screen"].column,
@@ -13585,12 +14972,13 @@ ol.ui.horizontal.list li:before,
 
 .ui.centered.grid,
 .ui.centered.grid > .row,
-.ui.grid .centered.row {
+.ui.grid > .centered.row {
   text-align: center;
 }
 
-.ui.centered.grid > .column:not(.aligned),
+.ui.centered.grid > .column:not(.aligned):not(.row),
 .ui.centered.grid > .row > .column:not(.aligned),
+.ui.centered.grid > .row:not(.centered),
 .ui.grid .centered.row > .column:not(.aligned) {
   text-align: left;
 }
@@ -14304,8 +15692,8 @@ ol.ui.horizontal.list li:before,
   .ui.stackable.grid {
     display: block !important;
     width: auto;
-    margin-left: -1rem;
-    margin-right: -1rem;
+    margin-left: -1rem !important;
+    margin-right: -1rem !important;
     padding: 0em;
   }
 
@@ -14318,8 +15706,8 @@ ol.ui.horizontal.list li:before,
     display: block !important;
     width: auto !important;
     margin: 0em 0em !important;
-    padding: 1rem 2rem !important;
     box-shadow: none !important;
+    padding: 1rem 1rem !important;
   }
 
   .ui.stackable.grid > .row {
@@ -14327,12 +15715,24 @@ ol.ui.horizontal.list li:before,
     padding: 0em;
   }
 
-  .ui.stackable.celled.grid > .column:not(.row),
-  .ui.stackable.divided.grid > .column:not(.row),
-  .ui.stackable.celled.grid > .row > .column,
-  .ui.stackable.divided.grid > .row > .column {
-    border-top: 1px solid rgba(39, 41, 43, 0.15);
-    box-shadow: none !important;
+  .ui.stackable.page.grid {
+    margin-left: 0em !important;
+    margin-right: 0em !important;
+  }
+
+  /* Equal Height Stackable */
+
+  .ui[class*="equal height"].stackable.page.grid {
+    display: block !important;
+  }
+
+  /* Divided Stackable */
+
+  .ui.stackable.divided.grid > .row:first-child > .column:first-child,
+  .ui.stackable.celled.grid > .row:first-child > .column:first-child,
+  .ui.stackable.divided.grid > .column:not(.row):first-child,
+  .ui.stackable.celled.grid > .column:not(.row):first-child {
+    border-top: none !important;
   }
 
   .ui.inverted.stackable.celled.grid > .column:not(.row),
@@ -14342,22 +15742,14 @@ ol.ui.horizontal.list li:before,
     border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  .ui.stackable.divided.grid > .row:first-child > .column:first-child,
-  .ui.stackable.celled.grid > .row:first-child > .column:first-child,
-  .ui.stackable.divided.grid > .column:not(.row):first-child,
-  .ui.stackable.celled.grid > .column:not(.row):first-child {
-    border-top: none !important;
-  }
-
-  .ui[class*="equal height"].stackable.page.grid {
-    display: block !important;
-    width: 100% !important;
-  }
-
-  /* Remove pointers from vertical menus */
-
-  .ui.stackable.grid .vertical.pointing.menu .item:after {
-    display: none;
+  .ui.stackable.celled.grid > .column:not(.row),
+  .ui.stackable.divided.grid > .column:not(.row),
+  .ui.stackable.celled.grid > .row > .column,
+  .ui.stackable.divided.grid > .row > .column {
+    border-top: 1px solid rgba(39, 41, 43, 0.15);
+    box-shadow: none !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
   }
 }
 
@@ -14430,7 +15822,7 @@ ol.ui.horizontal.list li:before,
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -14683,7 +16075,7 @@ ol.ui.horizontal.list li:before,
 
 /* Dropdown */
 
-.ui.menu .ui.dropdown.visible {
+.ui.menu .ui.dropdown.item.visible {
   background: rgba(0, 0, 0, 0.03);
   border-bottom-right-radius: 0em;
   border-bottom-left-radius: 0em;
@@ -14927,16 +16319,17 @@ ol.ui.horizontal.list li:before,
   margin-left: 1em;
 }
 
+.ui.vertical.menu .active.dropdown.item {
+  border-top-right-radius: 0em;
+  border-bottom-right-radius: 0em;
+}
+
 .ui.vertical.menu .dropdown.item .menu {
   top: 0% !important;
   left: 100%;
   margin: 0px 0px 0px 0px;
   box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.08);
-}
-
-.ui.vertical.menu .dropdown.item.active {
-  border-top-right-radius: 0em;
-  border-bottom-right-radius: 0em;
+  border-radius: 0em 0.2857rem 0.2857rem 0.2857rem;
 }
 
 .ui.vertical.menu .dropdown.item .menu .item {
@@ -15126,6 +16519,7 @@ ol.ui.horizontal.list li:before,
 }
 
 .ui.tabular.menu ~ .bottom.attached.segment {
+  border-top: none;
   margin: -1px 0px 0px;
 }
 
@@ -15521,11 +16915,20 @@ ol.ui.horizontal.list li:before,
   box-shadow: none;
 }
 
+/* Inverted */
+
 .ui.inverted.text.menu,
 .ui.inverted.text.menu .item,
 .ui.inverted.text.menu .item:hover,
 .ui.inverted.text.menu .item.active {
   background-color: transparent;
+}
+
+/* Fluid */
+
+.ui.fluid.text.menu {
+  margin-left: 0em;
+  margin-right: 0em;
 }
 
 /*--------------
@@ -15582,6 +16985,10 @@ ol.ui.horizontal.list li:before,
 
 .ui.labeled.icon.menu {
   text-align: center;
+}
+
+.ui.fluid.labeled.icon.menu > .item {
+  min-width: 0em;
 }
 
 .ui.labeled.icon.menu > .item {
@@ -15960,10 +17367,6 @@ ol.ui.horizontal.list li:before,
   text-align: center;
 }
 
-.ui.item.menu > .item:last-child {
-  border-radius: 0px 0.2857rem 0.2857rem 0px;
-}
-
 .ui.menu.two.item .item {
   width: 50%;
 }
@@ -16026,14 +17429,15 @@ ol.ui.horizontal.list li:before,
   border-radius: 0px !important;
 }
 
-.ui.menu.fixed.top {
+.ui.fixed.menu,
+.ui.top.fixed.menu {
   top: 0px;
   left: 0px;
   right: auto;
   bottom: auto;
 }
 
-.ui.menu.fixed.right {
+.ui.right.fixed.menu {
   top: 0px;
   right: 0px;
   left: auto;
@@ -16042,14 +17446,14 @@ ol.ui.horizontal.list li:before,
   height: 100%;
 }
 
-.ui.menu.fixed.bottom {
+.ui.bottom.fixed.menu {
   bottom: 0px;
   left: 0px;
   top: auto;
   right: auto;
 }
 
-.ui.menu.fixed.left {
+.ui.left.fixed.menu {
   top: 0px;
   left: 0px;
   right: auto;
@@ -16194,7 +17598,7 @@ ol.ui.horizontal.list li:before,
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -16345,11 +17749,11 @@ ol.ui.horizontal.list li:before,
     Visible
 ---------------*/
 
-.ui.message.visible {
+.ui.visible.visible.visible.visible.message {
   display: block;
 }
 
-.ui.icon.message.visible {
+.ui.icon.visible.visible.visible.visible.message {
   display: table;
 }
 
@@ -16357,7 +17761,7 @@ ol.ui.horizontal.list li:before,
      Hidden
 ---------------*/
 
-.ui.message.hidden {
+.ui.hidden.hidden.hidden.hidden.message {
   display: none;
 }
 
@@ -16671,7 +18075,7 @@ ol.ui.horizontal.list li:before,
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -16739,16 +18143,19 @@ ol.ui.horizontal.list li:before,
   border-left: none;
 }
 
-.ui.table thead th:first-child {
-  border-radius: 0.25rem 0em 0em 0em;
+.ui.table thead tr > th:first-child {
   border-left: none;
 }
 
-.ui.table thead th:last-child {
+.ui.table thead tr:first-child > th:first-child {
+  border-radius: 0.25rem 0em 0em 0em;
+}
+
+.ui.table thead tr:first-child > th:last-child {
   border-radius: 0em 0.25rem 0em 0em;
 }
 
-.ui.table thead th:only-child {
+.ui.table thead tr:first-child > th:only-child {
   border-radius: 0.25rem 0.25rem 0em 0em;
 }
 
@@ -16771,15 +18178,19 @@ ol.ui.horizontal.list li:before,
   text-transform: none;
 }
 
-.ui.table tfoot th:first-child {
+.ui.table tfoot tr > th:first-child {
+  border-left: none;
+}
+
+.ui.table tfoot tr:first-child > th:first-child {
   border-radius: 0em 0em 0em 0.25rem;
 }
 
-.ui.table tfoot th:last-child {
+.ui.table tfoot tr:first-child > th:last-child {
   border-radius: 0em 0em 0.25rem 0em;
 }
 
-.ui.table tfoot th:only-child {
+.ui.table tfoot tr:first-child > th:only-child {
   border-radius: 0em 0em 0.25rem 0.25rem;
 }
 
@@ -16827,64 +18238,118 @@ ol.ui.horizontal.list li:before,
 
 /* Responsive */
 
-@media only screen and (max-width: 768px) {
-  .ui.table {
-    display: block;
+@media only screen and (max-width: 767px) {
+  .ui.table:not(.unstackable),
+  .ui.table:not(.unstackable) tbody,
+  .ui.table:not(.unstackable) tr,
+  .ui.table:not(.unstackable) tr > th,
+  .ui.table:not(.unstackable) tr > td {
+    width: 100% !important;
+    display: block !important;
+  }
+
+  .ui.table:not(.unstackable) {
     padding: 0em;
   }
 
-  .ui.table thead {
+  .ui.table:not(.unstackable) thead {
     display: block;
   }
 
-  .ui.table tfoot {
+  .ui.table:not(.unstackable) tfoot {
     display: block;
   }
 
-  .ui.table tbody {
-    display: block;
-  }
-
-  .ui.table tr {
-    display: block;
-  }
-
-  .ui.table tr > th,
-  .ui.table tr > td {
+  .ui.table:not(.unstackable) tr > th,
+  .ui.table:not(.unstackable) tr > td {
     background: none;
-    width: 100% !important;
-    display: block;
     border: none !important;
     padding: 0.25em 0.75em;
     box-shadow: none;
   }
 
-  .ui.table th:first-child,
-  .ui.table td:first-child {
+  .ui.table:not(.unstackable) th:first-child,
+  .ui.table:not(.unstackable) td:first-child {
     font-weight: bold;
     padding-top: 1em;
   }
 
-  .ui.table th:last-child,
-  .ui.table td:last-child {
+  .ui.table:not(.unstackable) th:last-child,
+  .ui.table:not(.unstackable) td:last-child {
     box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset;
     padding-bottom: 1em;
   }
 
   /* Clear BG Colors */
 
-  .ui.table tr > td.warning,
-  .ui.table tr > td.error,
-  .ui.table tr > td.active,
-  .ui.table tr > td.positive,
-  .ui.table tr > td.negative {
+  .ui.table:not(.unstackable) tr > td.warning,
+  .ui.table:not(.unstackable) tr > td.error,
+  .ui.table:not(.unstackable) tr > td.active,
+  .ui.table:not(.unstackable) tr > td.positive,
+  .ui.table:not(.unstackable) tr > td.negative {
     background-color: transparent !important;
   }
+
+  /* Definition Table */
+
+  .ui.definition.table:not(.unstackable) thead th:first-child {
+    box-shadow: none !important;
+  }
+
+  .ui.definition.table:not(.unstackable) tr td:first-child {
+    padding-bottom: 1em;
+  }
+
+  .ui.definition.table:not(.unstackable) tr td:nth-child(n+2) {
+    padding-top: 1em;
+  }
+}
+
+/*******************************
+            Coupling
+*******************************/
+
+/* UI Image */
+
+.ui.table th .image,
+.ui.table th .image img,
+.ui.table td .image,
+.ui.table td .image img {
+  max-width: none;
 }
 
 /*******************************
              Types
 *******************************/
+
+/*--------------
+    Complex
+---------------*/
+
+.ui.structured.table {
+  border-collapse: collapse;
+}
+
+.ui.structured.table thead th {
+  border-left: none;
+  border-right: none;
+}
+
+.ui.structured.sortable.table thead th {
+  border-left: 1px solid #d0d0d0;
+  border-right: 1px solid #d0d0d0;
+}
+
+.ui.structured.basic.table th {
+  border-left: none;
+  border-right: none;
+}
+
+.ui.structured.celled.table tr th,
+.ui.structured.celled.table tr td {
+  border-left: 1px solid #d4d4d5;
+  border-right: 1px solid #d4d4d5;
+}
 
 /*--------------
    Definition
@@ -17062,6 +18527,77 @@ ol.ui.horizontal.list li:before,
 /*******************************
           Variations
 *******************************/
+
+/*--------------
+    Stackable
+---------------*/
+
+@media only screen and (max-width: 991px) {
+  .ui[class*="tablet stackable"].table,
+  .ui[class*="tablet stackable"].table tbody,
+  .ui[class*="tablet stackable"].table tr,
+  .ui[class*="tablet stackable"].table tr > th,
+  .ui[class*="tablet stackable"].table tr > td {
+    width: 100% !important;
+    display: block !important;
+  }
+
+  .ui[class*="tablet stackable"].table {
+    padding: 0em;
+  }
+
+  .ui[class*="tablet stackable"].table thead {
+    display: block;
+  }
+
+  .ui[class*="tablet stackable"].table tfoot {
+    display: block;
+  }
+
+  .ui[class*="tablet stackable"].table tr > th,
+  .ui[class*="tablet stackable"].table tr > td {
+    background: none;
+    border: none !important;
+    padding: 0.25em 0.75em;
+    box-shadow: none;
+  }
+
+  .ui[class*="tablet stackable"].table th:first-child,
+  .ui[class*="tablet stackable"].table td:first-child {
+    font-weight: bold;
+    padding-top: 1em;
+  }
+
+  .ui[class*="tablet stackable"].table th:last-child,
+  .ui[class*="tablet stackable"].table td:last-child {
+    box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset;
+    padding-bottom: 1em;
+  }
+
+  /* Clear BG Colors */
+
+  .ui[class*="tablet stackable"].table tr > td.warning,
+  .ui[class*="tablet stackable"].table tr > td.error,
+  .ui[class*="tablet stackable"].table tr > td.active,
+  .ui[class*="tablet stackable"].table tr > td.positive,
+  .ui[class*="tablet stackable"].table tr > td.negative {
+    background-color: transparent !important;
+  }
+
+  /* Definition Table */
+
+  .ui.definition[class*="tablet stackable"].table thead th:first-child {
+    box-shadow: none !important;
+  }
+
+  .ui.definition[class*="tablet stackable"].table tr td:first-child {
+    padding-bottom: 1em;
+  }
+
+  .ui.definition[class*="tablet stackable"].table tr td:nth-child(n+2) {
+    padding-top: 1em;
+  }
+}
 
 /*--------------
      Aligned
@@ -17475,6 +19011,7 @@ ol.ui.horizontal.list li:before,
 
 .ui.inverted.sortable.table thead th {
   border-left-color: transparent;
+  border-right-color: transparent;
 }
 
 /*--------------
@@ -17567,28 +19104,34 @@ ol.ui.horizontal.list li:before,
 
 .ui[class*="very basic"].table:not(.sortable):not(.striped) th,
 .ui[class*="very basic"].table:not(.sortable):not(.striped) td {
-  padding: 0.8em 0em;
+  padding: 0.7em 0.8em;
 }
 
-.ui[class*="very basic"].table:not(.sortable):not(.striped) thead th {
+.ui[class*="very basic"].table:not(.sortable):not(.striped) th:first-child,
+.ui[class*="very basic"].table:not(.sortable):not(.striped) td:first-child {
+  padding-left: 0em;
+}
+
+.ui[class*="very basic"].table:not(.sortable):not(.striped) th:last-child,
+.ui[class*="very basic"].table:not(.sortable):not(.striped) td:last-child {
+  padding-right: 0em;
+}
+
+.ui[class*="very basic"].table:not(.sortable):not(.striped) thead tr:first-child th {
   padding-top: 0em;
-}
-
-.ui[class*="very basic"].table:not(.sortable):not(.striped) tbody tr:last-child td {
-  padding-bottom: 0em;
 }
 
 /*--------------
      Celled
 ---------------*/
 
-.ui.celled.table th,
-.ui.celled.table td {
+.ui.celled.table tr th,
+.ui.celled.table tr td {
   border-left: 1px solid #d4d4d5;
 }
 
-.ui.celled.table th:first-child,
-.ui.celled.table td:first-child {
+.ui.celled.table tr th:first-child,
+.ui.celled.table tr td:first-child {
   border-left: none;
 }
 
@@ -17672,7 +19215,290 @@ ol.ui.horizontal.list li:before,
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
+ * https://github.com/Semantic-Org/Semantic-UI
+ * http://www.semantic-ui.com/
+ *
+ * Copyright 2014 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+/*******************************
+         Advertisement
+*******************************/
+
+.ui.ad {
+  display: block;
+  overflow: hidden;
+  margin: 1em 0em;
+}
+
+.ui.ad:first-child {
+  margin: 0em;
+}
+
+.ui.ad:last-child {
+  margin: 0em;
+}
+
+.ui.ad iframe {
+  margin: 0em;
+  padding: 0em;
+  border: none;
+  overflow: hidden;
+}
+
+/*--------------
+     Common
+---------------*/
+
+/* Leaderboard */
+
+.ui.leaderboard.ad {
+  width: 728px;
+  height: 90px;
+}
+
+/* Medium Rectangle */
+
+.ui[class*="medium rectangle"].ad {
+  width: 300px;
+  height: 250px;
+}
+
+/* Large Rectangle */
+
+.ui[class*="large rectangle"].ad {
+  width: 336px;
+  height: 280px;
+}
+
+/* Half Page */
+
+.ui[class*="half page"].ad {
+  width: 300px;
+  height: 600px;
+}
+
+/*--------------
+     Square
+---------------*/
+
+/* Square */
+
+.ui.square.ad {
+  width: 250px;
+  height: 250px;
+}
+
+/* Small Square */
+
+.ui[class*="small square"].ad {
+  width: 200px;
+  height: 200px;
+}
+
+/*--------------
+    Rectangle
+---------------*/
+
+/* Small Rectangle */
+
+.ui[class*="small rectangle"].ad {
+  width: 180px;
+  height: 150px;
+}
+
+/* Vertical Rectangle */
+
+.ui[class*="vertical rectangle"].ad {
+  width: 240px;
+  height: 400px;
+}
+
+/*--------------
+     Button
+---------------*/
+
+.ui.button.ad {
+  width: 120px;
+  height: 90px;
+}
+
+.ui[class*="square button"].ad {
+  width: 125px;
+  height: 125px;
+}
+
+.ui[class*="small button"].ad {
+  width: 120px;
+  height: 60px;
+}
+
+/*--------------
+   Skyscrapers
+---------------*/
+
+/* Skyscraper */
+
+.ui.skyscraper.ad {
+  width: 120px;
+  height: 600px;
+}
+
+/* Wide Skyscraper */
+
+.ui[class*="wide skyscraper"].ad {
+  width: 160px;
+}
+
+/*--------------
+     Banners
+---------------*/
+
+/* Banner */
+
+.ui.banner.ad {
+  width: 468px;
+  height: 60px;
+}
+
+/* Vertical Banner */
+
+.ui[class*="vertical banner"].ad {
+  width: 120px;
+  height: 240px;
+}
+
+/* Top Banner */
+
+.ui[class*="top banner"].ad {
+  width: 930px;
+  height: 180px;
+}
+
+/* Half Banner */
+
+.ui[class*="half banner"].ad {
+  width: 234px;
+  height: 60px;
+}
+
+/*--------------
+    Boards
+---------------*/
+
+/* Leaderboard */
+
+.ui[class*="large leaderboard"].ad {
+  width: 970px;
+  height: 90px;
+}
+
+/* Billboard */
+
+.ui.billboard.ad {
+  width: 970px;
+  height: 250px;
+}
+
+/*--------------
+    Panorama
+---------------*/
+
+/* Panorama */
+
+.ui.panorama.ad {
+  width: 980px;
+  height: 120px;
+}
+
+/*--------------
+     Netboard
+---------------*/
+
+/* Netboard */
+
+.ui.netboard.ad {
+  width: 580px;
+  height: 400px;
+}
+
+/*--------------
+     Mobile
+---------------*/
+
+/* Large Mobile Banner */
+
+.ui[class*="large mobile banner"].ad {
+  width: 320px;
+  height: 100px;
+}
+
+/* Mobile Leaderboard */
+
+.ui[class*="mobile leaderboard"].ad {
+  width: 320px;
+  height: 50px;
+}
+
+/*******************************
+             Types
+*******************************/
+
+/* Mobile Sizes */
+
+.ui.mobile.ad {
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .ui.mobile.ad {
+    display: block;
+  }
+}
+
+/*******************************
+           Variations
+*******************************/
+
+.ui.centered.ad {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ui.test.ad {
+  position: relative;
+  background: #333333;
+}
+
+.ui.test.ad:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  content: 'Ad';
+  color: #ffffff;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.ui.mobile.test.ad:after {
+  font-size: 0.85714em;
+}
+
+.ui.test.ad[data-text]:after {
+  content: attr(data-text);
+}
+
+/*
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -18516,7 +20342,7 @@ a.ui.card:hover,
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -18787,7 +20613,7 @@ a.ui.card:hover,
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -19083,7 +20909,7 @@ a.ui.card:hover,
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -19576,7 +21402,7 @@ a.ui.card:hover,
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -20024,7 +21850,7 @@ a.ui.card:hover,
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -20249,6 +22075,14 @@ a.ui.card:hover,
   width: 100%;
 }
 
+/*--------------
+     Inverted
+---------------*/
+
+.ui.inverted.accordion .title:not(.ui) {
+  color: #ffffff;
+}
+
 /*******************************
          Theme Overrides
 *******************************/
@@ -20283,7 +22117,7 @@ a.ui.card:hover,
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -20304,7 +22138,7 @@ a.ui.card:hover,
 .ui.checkbox {
   position: relative;
   display: inline-block;
-  height: 17px;
+  min-height: 17px;
   font-size: 1rem;
   line-height: 15px;
   min-width: 17px;
@@ -20485,7 +22319,7 @@ a.ui.card:hover,
 ---------------*/
 
 .ui.radio.checkbox {
-  height: 14px;
+  min-height: 14px;
 }
 
 /* Box */
@@ -20534,7 +22368,7 @@ a.ui.card:hover,
 
 .ui.slider.checkbox {
   cursor: pointer;
-  height: 1.25rem;
+  min-height: 1.25rem;
 }
 
 .ui.slider.checkbox .box,
@@ -20634,15 +22468,18 @@ a.ui.card:hover,
 
 .ui.toggle.checkbox {
   cursor: pointer;
-  height: 1.5rem;
+  min-height: 1.5rem;
 }
 
 .ui.toggle.checkbox .box,
 .ui.toggle.checkbox label {
-  height: 1.5rem;
+  min-height: 1.5rem;
   padding-left: 4.5rem;
-  line-height: 1.5rem;
   color: rgba(0, 0, 0, 0.8);
+}
+
+.ui.toggle.checkbox label {
+  padding-top: 0.15em;
 }
 
 /* Switch */
@@ -20784,7 +22621,7 @@ a.ui.card:hover,
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -20883,8 +22720,8 @@ a.ui.card:hover,
 
 .ui.page.dimmer {
   position: fixed;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+  -webkit-transform-style: '';
+  transform-style: '';
   -webkit-perspective: 2000px;
   perspective: 2000px;
   -webkit-transform-origin: center center;
@@ -20977,7 +22814,7 @@ body.dimmed.dimmable > :not(.dimmer) {
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -21008,7 +22845,7 @@ body.dimmed.dimmable > :not(.dimmer) {
 *******************************/
 
 /*--------------
-     Menu
+      Menu
 ---------------*/
 
 .ui.dropdown .menu {
@@ -21475,17 +23312,19 @@ select.ui.dropdown {
 /* Search Dropdown */
 
 .ui.search.dropdown > input.search {
-  background: none transparent;
-  border: none;
+  background: none transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0em !important;
   cursor: pointer;
   position: absolute;
-  border-radius: 0em !important;
   top: 0em;
   left: 0em;
   width: 100%;
   outline: none;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   padding: inherit;
+  /*Amazing trick */
 }
 
 /* Search Selection */
@@ -21615,6 +23454,12 @@ select.ui.dropdown {
   transition: none;
 }
 
+.ui.dropdown > .loading.menu {
+  display: block;
+  visibility: hidden;
+  z-index: -1;
+}
+
 /*--------------------
     Keyboard Select
 ----------------------*/
@@ -21693,6 +23538,29 @@ select.ui.dropdown {
 
 .ui.dropdown .menu {
   left: 0px;
+}
+
+/* Default Side (Right) */
+
+.ui.dropdown .right.menu > .menu,
+.ui.dropdown .menu .right.menu {
+  left: 100% !important;
+  right: auto !important;
+}
+
+/* Left Flyout Menu */
+
+.ui.dropdown > .left.menu .menu,
+.ui.dropdown .menu .left.menu {
+  left: auto !important;
+  right: 100% !important;
+}
+
+.ui.dropdown .item .left.dropdown.icon,
+.ui.dropdown .left.menu .item .dropdown.icon {
+  width: auto;
+  float: left;
+  margin: 0.2em 0.75em 0em 0em;
 }
 
 /*--------------
@@ -21777,9 +23645,12 @@ select.ui.dropdown {
 .ui.floating.dropdown .menu {
   left: 0;
   right: auto;
-  margin-top: 0.5em !important;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
   border-radius: 0.2857rem;
+}
+
+.ui.floating.dropdown > .menu {
+  margin-top: 0.5em !important;
 }
 
 /*--------------
@@ -21989,6 +23860,11 @@ select.ui.dropdown {
   content: '\f0da';
 }
 
+.ui.dropdown .item .left.dropdown.icon:before,
+.ui.dropdown .left.menu .item .dropdown.icon:before {
+  content: "\f0d9";
+}
+
 /* Vertical Menu Dropdown */
 
 .ui.vertical.menu .dropdown.item > .dropdown.icon:before {
@@ -22015,7 +23891,7 @@ select.ui.dropdown {
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -22382,13 +24258,6 @@ select.ui.dropdown {
   color: rgba(0, 0, 0, 0.8);
 }
 
-@media only screen and (max-width: 767px) {
-  .ui.fullscreen.modal {
-    width: auto !important;
-    margin: 1em !important;
-  }
-}
-
 /*--------------
       Size
 ---------------*/
@@ -22490,7 +24359,7 @@ select.ui.dropdown {
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -22637,7 +24506,7 @@ a.ui.nag {
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -22940,7 +24809,7 @@ a.ui.nag {
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -22976,6 +24845,66 @@ a.ui.nag {
 
 /* Indicating */
 
+.ui.indicating.progress .bar[style*="width: 1"],
+.ui.indicating.progress .bar[style*="width: 2"] {
+  background-color: #d95c5c;
+}
+
+.ui.indicating.progress .bar[style*="width: 3"] {
+  background-color: #d9a65c;
+}
+
+.ui.indicating.progress .bar[style*="width: 4"],
+.ui.indicating.progress .bar[style*="width: 5"] {
+  background-color: #e6bb48;
+}
+
+.ui.indicating.progress .bar[style*="width: 6"] {
+  background-color: #ddc928;
+}
+
+.ui.indicating.progress .bar[style*="width: 7"],
+.ui.indicating.progress .bar[style*="width: 8"] {
+  background-color: #b4d95c;
+}
+
+.ui.indicating.progress .bar[style*="width: 9"],
+.ui.indicating.progress .bar[style*="width: 100"] {
+  background-color: #66da81;
+}
+
+/* Indicating Label */
+
+.ui.indicating.progress[data-percent^="1"] .label,
+.ui.indicating.progress[data-percent^="2"] .label {
+  color: #d95c5c;
+}
+
+.ui.indicating.progress[data-percent^="3"] .label {
+  color: #d9a65c;
+}
+
+.ui.indicating.progress[data-percent^="4"] .label,
+.ui.indicating.progress[data-percent^="5"] .label {
+  color: #e6bb48;
+}
+
+.ui.indicating.progress[data-percent^="6"] .label {
+  color: #ddc928;
+}
+
+.ui.indicating.progress[data-percent^="7"] .label,
+.ui.indicating.progress[data-percent^="8"] .label {
+  color: #b4d95c;
+}
+
+.ui.indicating.progress[data-percent^="9"] .label,
+.ui.indicating.progress[data-percent^="100"] .label {
+  color: #66da81;
+}
+
+/* Single Digits */
+
 .ui.indicating.progress .bar[style^="width: 1%"],
 .ui.indicating.progress .bar[style^="width: 2%"],
 .ui.indicating.progress .bar[style^="width: 3%"],
@@ -22984,75 +24913,25 @@ a.ui.nag {
 .ui.indicating.progress .bar[style^="width: 6%"],
 .ui.indicating.progress .bar[style^="width: 7%"],
 .ui.indicating.progress .bar[style^="width: 8%"],
-.ui.indicating.progress .bar[style^="width: 9%"],
-.ui.indicating.progress .bar[style^="width: 1"],
-.ui.indicating.progress .bar[style^="width: 2"] {
+.ui.indicating.progress .bar[style^="width: 9%"] {
   background-color: #d95c5c;
 }
 
-.ui.indicating.progress .bar[style^="width: 3"] {
-  background-color: #d9a65c;
-}
-
-.ui.indicating.progress .bar[style^="width: 4"],
-.ui.indicating.progress .bar[style^="width: 5"] {
-  background-color: #e6bb48;
-}
-
-.ui.indicating.progress .bar[style^="width: 6"] {
-  background-color: #ddc928;
-}
-
-.ui.indicating.progress .bar[style^="width: 7"],
-.ui.indicating.progress .bar[style^="width: 8"] {
-  background-color: #b4d95c;
-}
-
-.ui.indicating.progress .bar[style^="width: 9"],
-.ui.indicating.progress .bar[style^="width: 100"] {
-  background-color: #66da81;
-}
-
-/* Single Digits Last */
-
-.ui.indicating.progress .bar[style^="width: 1%"] + .label,
-.ui.indicating.progress .bar[style^="width: 2%"] + .label,
-.ui.indicating.progress .bar[style^="width: 3%"] + .label,
-.ui.indicating.progress .bar[style^="width: 4%"] + .label,
-.ui.indicating.progress .bar[style^="width: 5%"] + .label,
-.ui.indicating.progress .bar[style^="width: 6%"] + .label,
-.ui.indicating.progress .bar[style^="width: 7%"] + .label,
-.ui.indicating.progress .bar[style^="width: 8%"] + .label,
-.ui.indicating.progress .bar[style^="width: 9%"] + .label,
-.ui.indicating.progress .bar[style^="width: 1"] + .label,
-.ui.indicating.progress .bar[style^="width: 2"] + .label {
+.ui.indicating.progress[data-percent="1"] .label,
+.ui.indicating.progress[data-percent="2"] .label,
+.ui.indicating.progress[data-percent="3"] .label,
+.ui.indicating.progress[data-percent="4"] .label,
+.ui.indicating.progress[data-percent="5"] .label,
+.ui.indicating.progress[data-percent="6"] .label,
+.ui.indicating.progress[data-percent="7"] .label,
+.ui.indicating.progress[data-percent="8"] .label,
+.ui.indicating.progress[data-percent="9"] .label {
   color: #d95c5c;
 }
 
-.ui.indicating.progress .bar[style^="width: 3"] + .label {
-  color: #d9a65c;
-}
+/* Indicating Success */
 
-.ui.indicating.progress .bar[style^="width: 4"] + .label,
-.ui.indicating.progress .bar[style^="width: 5"] + .label {
-  color: #e6bb48;
-}
-
-.ui.indicating.progress .bar[style^="width: 6"] + .label {
-  color: #ddc928;
-}
-
-.ui.indicating.progress .bar[style^="width: 7"] + .label,
-.ui.indicating.progress .bar[style^="width: 8"] + .label {
-  color: #b4d95c;
-}
-
-.ui.indicating.progress .bar[style^="width: 9"] + .label,
-.ui.indicating.progress .bar[style^="width: 100"] + .label {
-  color: #66da81;
-}
-
-.ui.indicating.progress.success .bar + .label {
+.ui.indicating.progress.success .label {
   color: #356e36;
 }
 
@@ -23070,8 +24949,8 @@ a.ui.nag {
   min-width: 2em;
   background: #888888;
   border-radius: 0.2857rem;
-  -webkit-transition: width 0.2s linear, background-color 0.2s linear;
-  transition: width 0.2s linear, background-color 0.2s linear;
+  -webkit-transition: width 0.3s ease, background-color 0.3s ease;
+  transition: width 0.3s ease, background-color 0.3s ease;
 }
 
 /* Percent Complete */
@@ -23426,7 +25305,7 @@ a.ui.nag {
 }
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -23707,7 +25586,7 @@ a.ui.nag {
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -24050,7 +25929,7 @@ a.ui.nag {
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -24208,7 +26087,7 @@ a.ui.nag {
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -24244,9 +26123,9 @@ a.ui.nag {
   z-index: 102;
 }
 
-/* 3D Rendering */
+/* GPU Layers for Child Elements */
 
-.ui.sidebar * {
+.ui.sidebar > * {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transform: rotateZ(0deg);
@@ -24400,14 +26279,17 @@ a.ui.nag {
 }
 
 /*--------------
-     Mobile
+       iOS
 ---------------*/
 
-@media only screen and (max-width: 992px) {
-  html {
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-  }
+/*
+  iOS incorrectly sizes document when content
+  is presented outside of view with 2Dtranslate
+*/
+
+html.ios {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 /*******************************
@@ -24751,7 +26633,7 @@ a.ui.nag {
 }
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -24827,7 +26709,7 @@ a.ui.nag {
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -24916,7 +26798,7 @@ a.ui.nag {
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -24984,16 +26866,19 @@ a.ui.nag {
   border-left: none;
 }
 
-.ui.table thead th:first-child {
-  border-radius: 0.25rem 0em 0em 0em;
+.ui.table thead tr > th:first-child {
   border-left: none;
 }
 
-.ui.table thead th:last-child {
+.ui.table thead tr:first-child > th:first-child {
+  border-radius: 0.25rem 0em 0em 0em;
+}
+
+.ui.table thead tr:first-child > th:last-child {
   border-radius: 0em 0.25rem 0em 0em;
 }
 
-.ui.table thead th:only-child {
+.ui.table thead tr:first-child > th:only-child {
   border-radius: 0.25rem 0.25rem 0em 0em;
 }
 
@@ -25016,15 +26901,19 @@ a.ui.nag {
   text-transform: none;
 }
 
-.ui.table tfoot th:first-child {
+.ui.table tfoot tr > th:first-child {
+  border-left: none;
+}
+
+.ui.table tfoot tr:first-child > th:first-child {
   border-radius: 0em 0em 0em 0.25rem;
 }
 
-.ui.table tfoot th:last-child {
+.ui.table tfoot tr:first-child > th:last-child {
   border-radius: 0em 0em 0.25rem 0em;
 }
 
-.ui.table tfoot th:only-child {
+.ui.table tfoot tr:first-child > th:only-child {
   border-radius: 0em 0em 0.25rem 0.25rem;
 }
 
@@ -25072,64 +26961,118 @@ a.ui.nag {
 
 /* Responsive */
 
-@media only screen and (max-width: 768px) {
-  .ui.table {
-    display: block;
+@media only screen and (max-width: 767px) {
+  .ui.table:not(.unstackable),
+  .ui.table:not(.unstackable) tbody,
+  .ui.table:not(.unstackable) tr,
+  .ui.table:not(.unstackable) tr > th,
+  .ui.table:not(.unstackable) tr > td {
+    width: 100% !important;
+    display: block !important;
+  }
+
+  .ui.table:not(.unstackable) {
     padding: 0em;
   }
 
-  .ui.table thead {
+  .ui.table:not(.unstackable) thead {
     display: block;
   }
 
-  .ui.table tfoot {
+  .ui.table:not(.unstackable) tfoot {
     display: block;
   }
 
-  .ui.table tbody {
-    display: block;
-  }
-
-  .ui.table tr {
-    display: block;
-  }
-
-  .ui.table tr > th,
-  .ui.table tr > td {
+  .ui.table:not(.unstackable) tr > th,
+  .ui.table:not(.unstackable) tr > td {
     background: none;
-    width: 100% !important;
-    display: block;
     border: none !important;
     padding: 0.25em 0.75em;
     box-shadow: none;
   }
 
-  .ui.table th:first-child,
-  .ui.table td:first-child {
+  .ui.table:not(.unstackable) th:first-child,
+  .ui.table:not(.unstackable) td:first-child {
     font-weight: bold;
     padding-top: 1em;
   }
 
-  .ui.table th:last-child,
-  .ui.table td:last-child {
+  .ui.table:not(.unstackable) th:last-child,
+  .ui.table:not(.unstackable) td:last-child {
     box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset;
     padding-bottom: 1em;
   }
 
   /* Clear BG Colors */
 
-  .ui.table tr > td.warning,
-  .ui.table tr > td.error,
-  .ui.table tr > td.active,
-  .ui.table tr > td.positive,
-  .ui.table tr > td.negative {
+  .ui.table:not(.unstackable) tr > td.warning,
+  .ui.table:not(.unstackable) tr > td.error,
+  .ui.table:not(.unstackable) tr > td.active,
+  .ui.table:not(.unstackable) tr > td.positive,
+  .ui.table:not(.unstackable) tr > td.negative {
     background-color: transparent !important;
   }
+
+  /* Definition Table */
+
+  .ui.definition.table:not(.unstackable) thead th:first-child {
+    box-shadow: none !important;
+  }
+
+  .ui.definition.table:not(.unstackable) tr td:first-child {
+    padding-bottom: 1em;
+  }
+
+  .ui.definition.table:not(.unstackable) tr td:nth-child(n+2) {
+    padding-top: 1em;
+  }
+}
+
+/*******************************
+            Coupling
+*******************************/
+
+/* UI Image */
+
+.ui.table th .image,
+.ui.table th .image img,
+.ui.table td .image,
+.ui.table td .image img {
+  max-width: none;
 }
 
 /*******************************
              Types
 *******************************/
+
+/*--------------
+    Complex
+---------------*/
+
+.ui.structured.table {
+  border-collapse: collapse;
+}
+
+.ui.structured.table thead th {
+  border-left: none;
+  border-right: none;
+}
+
+.ui.structured.sortable.table thead th {
+  border-left: 1px solid #d0d0d0;
+  border-right: 1px solid #d0d0d0;
+}
+
+.ui.structured.basic.table th {
+  border-left: none;
+  border-right: none;
+}
+
+.ui.structured.celled.table tr th,
+.ui.structured.celled.table tr td {
+  border-left: 1px solid #d4d4d5;
+  border-right: 1px solid #d4d4d5;
+}
 
 /*--------------
    Definition
@@ -25307,6 +27250,77 @@ a.ui.nag {
 /*******************************
           Variations
 *******************************/
+
+/*--------------
+    Stackable
+---------------*/
+
+@media only screen and (max-width: 991px) {
+  .ui[class*="tablet stackable"].table,
+  .ui[class*="tablet stackable"].table tbody,
+  .ui[class*="tablet stackable"].table tr,
+  .ui[class*="tablet stackable"].table tr > th,
+  .ui[class*="tablet stackable"].table tr > td {
+    width: 100% !important;
+    display: block !important;
+  }
+
+  .ui[class*="tablet stackable"].table {
+    padding: 0em;
+  }
+
+  .ui[class*="tablet stackable"].table thead {
+    display: block;
+  }
+
+  .ui[class*="tablet stackable"].table tfoot {
+    display: block;
+  }
+
+  .ui[class*="tablet stackable"].table tr > th,
+  .ui[class*="tablet stackable"].table tr > td {
+    background: none;
+    border: none !important;
+    padding: 0.25em 0.75em;
+    box-shadow: none;
+  }
+
+  .ui[class*="tablet stackable"].table th:first-child,
+  .ui[class*="tablet stackable"].table td:first-child {
+    font-weight: bold;
+    padding-top: 1em;
+  }
+
+  .ui[class*="tablet stackable"].table th:last-child,
+  .ui[class*="tablet stackable"].table td:last-child {
+    box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.1) inset;
+    padding-bottom: 1em;
+  }
+
+  /* Clear BG Colors */
+
+  .ui[class*="tablet stackable"].table tr > td.warning,
+  .ui[class*="tablet stackable"].table tr > td.error,
+  .ui[class*="tablet stackable"].table tr > td.active,
+  .ui[class*="tablet stackable"].table tr > td.positive,
+  .ui[class*="tablet stackable"].table tr > td.negative {
+    background-color: transparent !important;
+  }
+
+  /* Definition Table */
+
+  .ui.definition[class*="tablet stackable"].table thead th:first-child {
+    box-shadow: none !important;
+  }
+
+  .ui.definition[class*="tablet stackable"].table tr td:first-child {
+    padding-bottom: 1em;
+  }
+
+  .ui.definition[class*="tablet stackable"].table tr td:nth-child(n+2) {
+    padding-top: 1em;
+  }
+}
 
 /*--------------
      Aligned
@@ -25720,6 +27734,7 @@ a.ui.nag {
 
 .ui.inverted.sortable.table thead th {
   border-left-color: transparent;
+  border-right-color: transparent;
 }
 
 /*--------------
@@ -25812,28 +27827,34 @@ a.ui.nag {
 
 .ui[class*="very basic"].table:not(.sortable):not(.striped) th,
 .ui[class*="very basic"].table:not(.sortable):not(.striped) td {
-  padding: 0.8em 0em;
+  padding: 0.7em 0.8em;
 }
 
-.ui[class*="very basic"].table:not(.sortable):not(.striped) thead th {
+.ui[class*="very basic"].table:not(.sortable):not(.striped) th:first-child,
+.ui[class*="very basic"].table:not(.sortable):not(.striped) td:first-child {
+  padding-left: 0em;
+}
+
+.ui[class*="very basic"].table:not(.sortable):not(.striped) th:last-child,
+.ui[class*="very basic"].table:not(.sortable):not(.striped) td:last-child {
+  padding-right: 0em;
+}
+
+.ui[class*="very basic"].table:not(.sortable):not(.striped) thead tr:first-child th {
   padding-top: 0em;
-}
-
-.ui[class*="very basic"].table:not(.sortable):not(.striped) tbody tr:last-child td {
-  padding-bottom: 0em;
 }
 
 /*--------------
      Celled
 ---------------*/
 
-.ui.celled.table th,
-.ui.celled.table td {
+.ui.celled.table tr th,
+.ui.celled.table tr td {
   border-left: 1px solid #d4d4d5;
 }
 
-.ui.celled.table th:first-child,
-.ui.celled.table td:first-child {
+.ui.celled.table tr th:first-child,
+.ui.celled.table tr td:first-child {
   border-left: none;
 }
 
@@ -25917,7 +27938,7 @@ a.ui.nag {
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -27005,7 +29026,7 @@ a.ui.nag {
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -27129,7 +29150,7 @@ a.ui.nag {
 *******************************/
 
 /*
- * # Semantic UI
+ * # Semantic UI - 1.6.2
  * https://github.com/Semantic-Org/Semantic-UI
  * http://www.semantic-ui.com/
  *
@@ -27164,13 +29185,14 @@ a.ui.nag {
         Field
 ---------------------*/
 
+.ui.form .fields .field,
 .ui.form .field {
   clear: both;
   margin: 0em 0em 1em;
 }
 
-.ui.form .fields:last-child .field,
-.ui.form :not(.fields) .field:last-child {
+.ui.form .fields:last-child,
+.ui.form .field:last-child {
   margin-bottom: 0em;
 }
 
@@ -27210,9 +29232,11 @@ a.ui.nag {
 ---------------------*/
 
 .ui.form textarea,
+.ui.form input:not([type]),
 .ui.form input[type="text"],
 .ui.form input[type="email"],
 .ui.form input[type="date"],
+.ui.form input[type="datetime-local"],
 .ui.form input[type="password"],
 .ui.form input[type="number"],
 .ui.form input[type="url"],
@@ -27222,13 +29246,16 @@ a.ui.nag {
   vertical-align: top;
 }
 
+.ui.form input:not([type]),
 .ui.form input[type="text"],
 .ui.form input[type="email"],
 .ui.form input[type="date"],
+.ui.form input[type="datetime-local"],
 .ui.form input[type="password"],
 .ui.form input[type="number"],
 .ui.form input[type="url"],
 .ui.form input[type="tel"] {
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   margin: 0em;
   outline: none;
   -webkit-appearance: none;
@@ -27412,9 +29439,11 @@ a.ui.nag {
         Focus
 ---------------------*/
 
+.ui.form input:not([type]):focus,
 .ui.form input[type="text"]:focus,
 .ui.form input[type="email"]:focus,
 .ui.form input[type="date"]:focus,
+.ui.form input[type="datetime-local"]:focus,
 .ui.form input[type="password"]:focus,
 .ui.form input[type="number"]:focus,
 .ui.form input[type="url"]:focus,
@@ -27481,17 +29510,21 @@ a.ui.nag {
 }
 
 .ui.form .fields.error .field textarea,
+.ui.form .fields.error .field input:not([type]),
 .ui.form .fields.error .field input[type="text"],
 .ui.form .fields.error .field input[type="email"],
 .ui.form .fields.error .field input[type="date"],
+.ui.form .fields.error .field input[type="datetime-local"],
 .ui.form .fields.error .field input[type="password"],
 .ui.form .fields.error .field input[type="number"],
 .ui.form .fields.error .field input[type="url"],
 .ui.form .fields.error .field input[type="tel"],
 .ui.form .field.error textarea,
+.ui.form .field.error input:not([type]),
 .ui.form .field.error input[type="text"],
 .ui.form .field.error input[type="email"],
 .ui.form .field.error input[type="date"],
+.ui.form .field.error input[type="datetime-local"],
 .ui.form .field.error input[type="password"],
 .ui.form .field.error input[type="number"],
 .ui.form .field.error input[type="url"],
@@ -27504,9 +29537,11 @@ a.ui.nag {
 }
 
 .ui.form .field.error textarea:focus,
+.ui.form .field.error input:not([type]):focus,
 .ui.form .field.error input[type="text"]:focus,
 .ui.form .field.error input[type="email"]:focus,
 .ui.form .field.error input[type="date"]:focus,
+.ui.form .field.error input[type="datetime-local"]:focus,
 .ui.form .field.error input[type="password"]:focus,
 .ui.form .field.error input[type="number"]:focus,
 .ui.form .field.error input[type="url"]:focus,
@@ -27834,8 +29869,19 @@ a.ui.nag {
   .ui.form .four.fields > .fields,
   .ui.form .four.fields > .field,
   .ui.form .five.fields > .fields,
-  .ui.form .five.fields > .field {
-    width: 100%;
+  .ui.form .five.fields > .field,
+  .ui.form .six.fields > .fields,
+  .ui.form .six.fields > .field,
+  .ui.form .seven.fields > .fields,
+  .ui.form .seven.fields > .field,
+  .ui.form .eight.fields > .fields,
+  .ui.form .eight.fields > .field,
+  .ui.form .nine.fields > .fields,
+  .ui.form .nine.fields > .field,
+  .ui.form .ten.fields > .fields,
+  .ui.form .ten.fields > .field {
+    width: 100% !important;
+    margin: 0em 0em 1em;
     padding-left: 0%;
     padding-right: 0%;
   }
@@ -27955,7 +30001,8 @@ a.ui.nag {
   .ui.form .fields > .fourteen.wide.field,
   .ui.form .fields > .fifteen.wide.field,
   .ui.form .fields > .sixteen.wide.field {
-    width: 100%;
+    width: 100% !important;
+    margin: 0em 0em 1em;
     padding-left: 0%;
     padding-right: 0%;
   }
@@ -27979,9 +30026,11 @@ a.ui.nag {
 .ui.form .inline.fields .field > label,
 .ui.form .inline.fields .field > p,
 .ui.form .inline.fields .field > input,
+.ui.form .inline.fields .field > .ui.input,
 .ui.form .inline.field > label,
 .ui.form .inline.field > p,
-.ui.form .inline.field > input {
+.ui.form .inline.field > input,
+.ui.form .inline.field > .ui.input {
   display: inline-block;
   width: auto;
   margin-top: 0em;
@@ -27991,7 +30040,9 @@ a.ui.nag {
 }
 
 .ui.form .inline.fields .field > input,
-.ui.form .inline.field > input {
+.ui.form .inline.fields .field > .ui.input,
+.ui.form .inline.field > input,
+.ui.form .inline.field > .ui.input {
   font-size: 0.9285em;
 }
 
