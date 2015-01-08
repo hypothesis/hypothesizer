@@ -7,7 +7,6 @@
  **/
 function(head, req) {
   var moment = require('lib/moment');
-  var Handlebars = require('lib/handlebars');
   var ddoc = this;
   start({
     'headers': {
@@ -25,7 +24,7 @@ function(head, req) {
       dates[row.key[0] + '-' + row.key[1] + '-' + row.key[2]] = row.value;
     }
   }
-  send(Handlebars.compile(ddoc.templates.header)({base_url: req.requested_path.slice(0, req.requested_path.indexOf('_rewrite')+1).join('/')}));
+  send(ddoc.templates.header);
   var weeks_count = Number(req.query['weeks']) || 52;
   send('<table class="ui table">');
   send('<tr><thead>');
