@@ -6,13 +6,21 @@
     <base href="/hypothesizer/_design/hypothesizer/_rewrite/" />
   </head>
   <body>
+    <div class="ui fixed main menu">
+      <div class="container">
+        <div class="title item">
+          <a href="/hypothesizer/_design/hypothesizer/_rewrite/"><b>Hypothesizer!</b></a>
+        </div>
+        <a class="icon calendar item" href="calendar">
+          Calendar
+        </a>
+        <search-suggest></search-suggest>
+      </div>
+    </div>
 
     <article class="ui one column page grid">
+      <div class="column"></div>
       <section class="column">
-        <h1 class="ui center aligned header">
-          Hypothesizer!
-        </h1>
-
         <section class="ui statistics">
           <div class="statistic" v-if="total_public">
             <div class="value">{{total_public}}</div>
@@ -38,7 +46,7 @@
       <section class="column">
         <table class="ui striped table">
           <tr v-repeat="users | orderBy 'value' -1 | limit 100">
-            <td>{{key[0]}}</td>
+            <td><a href="users/{{key[0]}}">{{key[0]}}</a></td>
             <td class="right aligned">{{value}}</td>
           </tr>
         </table>

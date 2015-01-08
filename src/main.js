@@ -36,6 +36,9 @@ window.Hypothesizer = new Vue({
       // sort uris by value
       // return top 100 from the list
     }
+  },
+  components: {
+    'search-suggest': require('./search-suggest')
   }
 });
 
