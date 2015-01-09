@@ -60,7 +60,7 @@
       <section class="column">
         <table class="ui striped table">
           <tr v-repeat="uris | orderBy 'value' -1 | limit 100">
-            <td>{{key | truncate 50}}</td>
+            <td><a href="{{key}}" target="_blank">{{key | truncate 50}}</a></td>
             <td class="right aligned">{{value}}</td>
           </tr>
         </table>
