@@ -23,7 +23,7 @@ window.Hypothesizer = new Vue({
     total_public: 0,
     total_public_tags: 0,
     users: [],
-    uris: []
+    uris: [],
   },
   computed: {
     total_public_users: function() {
@@ -47,9 +47,9 @@ db.query('hypothesizer/by_created')
     Hypothesizer.total_public = res['rows'][0]['value'];
   });
 
-db.query('hypothesizer/by_tag')
+db.query('hypothesizer/by_tag', {group: true})
   .then(function (res) {
-    Hypothesizer.total_public_tags = res['rows'][0]['value'];
+    Hypothesizer.total_public_tags = res['rows'].length;
   });
 
 db.query('hypothesizer/by_user', {group_level: 1})
