@@ -14,7 +14,12 @@ Vue.filter('limit',
 
 Vue.filter('truncate',
   function (s, n) {
-    return s.slice(0, n) + '...';
+    var sliced = s.slice(0, n);
+    if (sliced !== s) {
+      return sliced + '...';
+    } else {
+      return s;
+    }
   });
 
 window.Hypothesizer = new Vue({
