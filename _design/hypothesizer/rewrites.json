@@ -27,6 +27,36 @@
     }
   },
   {
+    "from": "/users/:user/:year",
+    "to": "_list/stream/by_user",
+    "query": {
+      "startkey": [":user", ":year"],
+      "endkey": [":user", ":year", "Z"],
+      "reduce": "false",
+      "include_docs": "true"
+    }
+  },
+  {
+    "from": "/users/:user/:year/:month",
+    "to": "_list/stream/by_user",
+    "query": {
+      "startkey": [":user", ":year", ":month"],
+      "endkey": [":user", ":year", ":month", "Z"],
+      "reduce": "false",
+      "include_docs": "true"
+    }
+  },
+  {
+    "from": "/users/:user/:year/:month/:day",
+    "to": "_list/stream/by_user",
+    "query": {
+      "startkey": [":user", ":year", ":month", ":day"],
+      "endkey": [":user", ":year", ":month", ":day", "Z"],
+      "reduce": "false",
+      "include_docs": "true"
+    }
+  },
+  {
     "from": "*",
     "to": "*"
   }

@@ -1,0 +1,22 @@
+<article class="ui card">
+  <div class="content">
+    <header class="header">
+      {{user}}
+      on <a href="{{uri}}" target="_blank">{{document.title}}</a>
+    </header>
+    <div class="meta">
+      <a href="{{_id}}">{{created}}</a>
+    </div>
+    <section class="description">
+      <blockquote>{{quote}}</blockquote>
+      {{text}}
+    </section>
+  </div>
+  {{#if tags}}
+  <footer class="extra content">
+    <div class="right floated">
+    {{#tags}}<span class="ui tag label">{{.}}</span>{{/tags}}
+    </div>
+  </footer>
+  {{/if}}
+</article>
