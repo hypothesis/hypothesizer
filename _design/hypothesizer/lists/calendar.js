@@ -26,6 +26,7 @@ function(head, req) {
   }
   send(ddoc.templates.header);
   var weeks_count = Number(req.query['weeks']) || 52;
+  send('<div class="ui one column grid"><div class="column">');
   send('<table class="ui table">');
   send('<tr><thead>');
   send('<th class="disabled one wide">Week</th>');
@@ -61,5 +62,6 @@ function(head, req) {
   }
   send('</tr></tbody>');
   send('</table>');
+  send('</div></div>');
   send(ddoc.templates.footer);
 }
