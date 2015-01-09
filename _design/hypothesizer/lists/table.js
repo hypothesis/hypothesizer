@@ -6,13 +6,15 @@
  * @param {object} req - Request Object. http://docs.couchdb.org/en/latest/json-structure.html#request-object
  **/
 function(head, req) {
+  var ddoc = this;
   start({
     'headers': {
       'Content-Type': 'text/html'
     }
   });
-  send('<html><body>');
-  send('<table>');
+  send(ddoc.templates.header);
+  send('<div class="ui one column grid"><div class="column">');
+  send('<table class="ui stripped table">');
   while (row = getRow()) {
     send('<tr>');
     if (typeof(row.key) !== 'string') {
@@ -25,5 +27,6 @@ function(head, req) {
     send('</tr>');
   }
   send('</table>');
-  send('</body></html>');
+  send('</div></div>');
+  send(ddoc.templates.footer);
 }
