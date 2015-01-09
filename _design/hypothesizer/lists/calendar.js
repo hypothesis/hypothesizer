@@ -13,10 +13,12 @@ function(head, req) {
       'Content-Type': 'text/html'
     }
   });
+  var user = false;
   var dates = {};
   while (row = getRow()) {
     // TODO: assumes array-based key...
     if (row.key[0].search('@') != -1) {
+      user = row.key[0];
       // first key is the user name, so skip it
       // TODO: make this dumber / unmix concerns
       dates[row.key[1] + '-' + row.key[2] + '-' + row.key[3]] = row.value;
@@ -50,10 +52,16 @@ function(head, req) {
             + day.format('MMM') + '</span>');
         first = false;
       }
+      if (user && stat > 0) {
+        send('<a href="users/' + user + '/' + day.format('YYYY/MM/DD') + '">');
+      }
       if (day.format('YYYY-MM-DD') == today.format('YYYY-MM-DD')) {
         send('<strong>' + stat + '</strong>');
       } else {
         send(stat);
+      }
+      if (user && stat > 0) {
+        send('</a>');
       }
       send('</td>');
       day.add(1, 'd');
