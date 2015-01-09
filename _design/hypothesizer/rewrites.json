@@ -11,6 +11,14 @@
     }
   },
   {
+    "from": "/tags/",
+    "to": "_list/table/by_tag",
+    "query": {
+      "group": "true"
+    }
+  },
+
+  {
     "from": "/users/",
     "to": "_list/table/by_user",
     "query": {

@@ -22,8 +22,10 @@ function(head, req) {
         send('<td><a href="/' + req.requested_path.join('/')
             + '/' + row.key[i] + '">' + row.key[i] + '</a></td>');
       }
-      send('<td>' + row.value + '</td>');
+    } else {
+      send('<td>' + row.key + '</td>');
     }
+    send('<td>' + row.value + '</td>');
     send('</tr>');
   }
   send('</table>');
