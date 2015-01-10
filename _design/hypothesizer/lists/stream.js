@@ -8,6 +8,9 @@
 function(head, req) {
   var moment = require('lib/moment');
   var Handlebars = require('lib/handlebars');
+  Handlebars.registerHelper('encodeURI', function(uri) {
+    return encodeURIComponent(uri);
+  });
   var ddoc = this;
   start({
     'headers': {

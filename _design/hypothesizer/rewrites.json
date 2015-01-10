@@ -4,6 +4,10 @@
     "to": "index.html"
   },
   {
+    "from": "/a/:annotation",
+    "to": "../../:annotation"
+  },
+  {
     "from": "/calendar",
     "to": "_list/calendar/by_created",
     "query": {
