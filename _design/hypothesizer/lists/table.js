@@ -7,6 +7,12 @@
  **/
 function(head, req) {
   var ddoc = this;
+  var url_prefix = '';
+  if (req.path.indexOf('by_tag') > -1) {
+    url_prefix = 'tags/';
+  } else if (req.path.indexOf('by_user') > -1) {
+    url_prefix = 'users/';
+  }
   start({
     'headers': {
       'Content-Type': 'text/html'
@@ -14,16 +20,15 @@ function(head, req) {
   });
   send(ddoc.templates.header);
   send('<div class="ui one column grid"><div class="column">');
-  send('<table class="ui stripped table">');
+  send('<table class="ui striped table">');
   while (row = getRow()) {
     send('<tr>');
     if (typeof(row.key) !== 'string') {
       for (var i = 0; i < row.key.length; i++) {
-        send('<td><a href="/' + req.requested_path.join('/')
-            + '/' + row.key[i] + '">' + row.key[i] + '</a></td>');
+        send('<td><a href="' + url_prefix + row.key[i] + '">' + row.key[i] + '</a></td>');
       }
     } else {
-      send('<td>' + row.key + '</td>');
+      send('<td><a href="' + url_prefix + row.key + '">' + row.key + '</a></td>');
     }
     send('<td>' + row.value + '</td>');
     send('</tr>');

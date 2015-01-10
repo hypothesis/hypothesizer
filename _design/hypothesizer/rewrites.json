@@ -21,7 +21,15 @@
       "group": "true"
     }
   },
-
+  {
+    "from": "/tags/:tag",
+    "to": "_list/stream/by_tag",
+    "query": {
+      "key": ":tag",
+      "reduce": "false",
+      "include_docs": "true"
+    }
+  },
   {
     "from": "/users/",
     "to": "_list/table/by_user",
