@@ -20,6 +20,28 @@ function(head, req) {
   send(ddoc.templates.header);
   send('<div class="ui one column page grid"><div class="column"></div><div class="column">');
   send('<div class="ui one cards">');
+  send('<div class="ui huge breadcrumb">');
+  if (req.path.indexOf('by_tag') > -1) {
+      send('<a class="section" href="tags/">Tags</a>');
+  } else if (req.path.indexOf('by_user') > -1) {
+      send('<a class="section" href="user/">Users</a>');
+  }
+  if (req.query.startkey) {
+    var url = 'users/';
+    for (var i = 0; i < req.query.startkey.length; i++) {
+      send('<div class="divider"> &gt; </div>');
+      if (i == req.query.startkey.length - 1) {
+        send('<div class="active section">' + req.query.startkey[i] + '</div>');
+      } else {
+        send('<div class="section"><a href="' + (url = url + '/' + req.query.startkey[i]) + '">' + req.query.startkey[i] + '</a></div>');
+      }
+    }
+  } else {
+    send('<div class="divider"> &gt; </div>');
+    send('<div class="active section">' + req.query.key + '</div>');
+  }
+  send('</div>');
+
   var current_date = false;
   while (row = getRow()) {
     var created = moment(row.doc.created).format('YYYY/MM/DD');
