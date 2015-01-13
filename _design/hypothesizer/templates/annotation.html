@@ -2,7 +2,12 @@
   <div class="content">
     <header class="header">
       {{user}}
-      on <a href="{{uri}}" target="_blank">{{document.title}}</a>
+      on <a href="{{uri}}" target="_blank">
+        {{#if document.title}}
+        {{document.title}}
+        {{else}}
+        {{uri}}
+        {{/if}}</a>
     </header>
     <div class="meta">
       <a href="a/{{encodeURI _id}}">{{created}}</a>
