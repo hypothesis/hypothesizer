@@ -1,4 +1,4 @@
-var PouchDB = require('../pouchdb.js');
+var PouchDB = require('pouchdb');
 var db = new PouchDB(location.protocol + '//' + location.hostname + ':'
     + location.port + '/' + location.pathname.split('/')[1]);
 
