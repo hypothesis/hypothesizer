@@ -20,7 +20,7 @@ function(head, req) {
   });
   send(ddoc.templates.header);
   send('<div class="ui one column grid"><div class="column">');
-  send('<table class="ui striped table">');
+  send('<table class="ui striped unstackable table">');
   while (row = getRow()) {
     send('<tr>');
     if (typeof(row.key) !== 'string') {

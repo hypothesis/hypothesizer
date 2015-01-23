@@ -29,7 +29,7 @@ function(head, req) {
   send(ddoc.templates.header);
   var weeks_count = Number(req.query['weeks']) || 52;
   send('<div class="ui one column grid"><div class="column">');
-  send('<table class="ui table">');
+  send('<table class="ui unstackable table">');
   send('<tr><thead>');
   send('<th class="disabled one wide">Week</th>');
   var weekdays = moment.weekdays();
