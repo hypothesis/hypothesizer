@@ -49,9 +49,9 @@
       </section>
     </article>
 
-    <article class="ui two column page grid">
+    <article class="ui two column stackable page grid">
       <section class="column">
-        <table class="ui striped table">
+        <table class="ui unstackable striped table">
           <tr v-repeat="users | orderBy 'value' -1 | limit 100">
             <td><a href="users/{{key[0]}}">{{key[0]}}</a></td>
             <td class="right aligned">{{value}}</td>
