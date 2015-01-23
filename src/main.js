@@ -1,4 +1,3 @@
-require('insert-css')(require('./semantic-ui/semantic.css'));
 require('insert-css')(require('./main.css'));
 
 var Vue = require('vue');
