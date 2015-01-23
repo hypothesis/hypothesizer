@@ -1,12 +1,17 @@
+#!/usr/bin/env python
+
+import os
 from getpass import getpass
 import json
 
 import requests
 
-#couch = 'https://hypothesis.cloudant.com/hypothesizer'
-couch = 'http://localhost:5984/hypothesizer'
-user = 'admin'
-password = getpass('Password for CouchDB:')
+couch = 'https://hypothesis.cloudant.com/hypothesizer'
+#couch = 'http://localhost:5984/hypothesizer'
+user = 'hypothesis'
+password = os.environ.get('COUCHDB_PASS')
+if  password == None:
+    password = getpass('Password for CouchDB:')
 
 first_req = requests.get('https://hypothes.is/api/search?limit=1')
 total = first_req.json()['total']
