@@ -31,6 +31,49 @@
     }
   },
   {
+    "from": "/uris/",
+    "to": "_list/table/by_uri",
+    "query": {
+      "group_level": "1"
+    }
+  },
+  {
+    "from": "/uris/:uri",
+    "to": "_list/calendar/by_uri",
+    "query": {
+      "startkey": [":uri"],
+      "endkey": [":uri", {}],
+      "group": "true"
+    }
+  },
+  {
+    "from": "/uris/:uri/:year",
+    "to": "_list/calendar/by_uri",
+    "query": {
+      "startkey": [":uri", ":year"],
+      "endkey": [":uri", ":year", {}],
+      "group": "true"
+    }
+  },
+  {
+    "from": "/uris/:uri/:year/:month",
+    "to": "_list/calendar/by_uri",
+    "query": {
+      "startkey": [":uri", ":year", ":month"],
+      "endkey": [":uri", ":year", ":month", {}],
+      "group": "true"
+    }
+  },
+  {
+    "from": "/uris/:uri/:year/:month/:day",
+    "to": "_list/calendar/by_uri",
+    "query": {
+      "startkey": [":uri", ":year", ":month", ":day"],
+      "endkey": [":uri", ":year", ":month", ":day", {}],
+      "group": "true"
+    }
+  },
+  {
     "from": "/users/",
     "to": "_list/table/by_user",
     "query": {

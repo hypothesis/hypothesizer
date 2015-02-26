@@ -5,6 +5,7 @@ var db = new PouchDB(location.protocol + '//' + location.hostname + ':'
 module.exports = {
   replace: true,
   template: require('./template.html'),
+  paramAttributes: ['view', 'placeholder', 'basehref'],
   data: function() {
     return {
       search: '',
@@ -15,14 +16,22 @@ module.exports = {
     search: 'loadResults'
   },
   methods: {
+    submit: function() {
+      location.href = this.basehref + encodeURIComponent(this.results[0].key);
+    },
     loadResults: function() {
       var self = this;
       this.results = [];
-      db.query('hypothesizer/by_user',
+      db.query(self.view,
         {limit: 10, startkey: [self.search], group_level: 1},
         function(err, resp) {
           self.results = resp.rows;
         });
+    }
+  },
+  filters: {
+    encodeURIComponent: function(v) {
+      return encodeURIComponent(v);
     }
   }
 };

@@ -1,11 +1,14 @@
 <div class="ui search item">
   <div class="ui transparent icon input">
-    <input class="prompt" placeholder="Enter a user id..." type="text"
-      v-model="search" v-on="keyup: results = [] | key esc, click: loadResults">
+    <input class="prompt" placeholder="{{placeholder}}" type="text"
+      v-model="search"
+      v-on="keyup: results = [] | key esc,
+        keyup: submit() | key enter,
+        click: loadResults">
     <i class="search icon"></i>
   </div>
   <div class="results transition" v-class="visible: results.length > 0">
-    <a class="result" v-repeat="results" track-by="key" href="users/{{key}}">
+    <a class="result" v-repeat="results" track-by="key" href="{{basehref}}{{key | encodeURIComponent}}">
       <div class="content">
         <div class="title">{{key}}</div>
       </div>

@@ -17,9 +17,9 @@ function(head, req) {
   var dates = {};
   while (row = getRow()) {
     // TODO: assumes array-based key...
-    if (row.key[0].search('@') != -1) {
+    if (row.key[0].search('@') != -1 || 'uri' in req.query) {
       user = row.key[0];
-      // first key is the user name, so skip it
+      // first key is a user name or uri, so skip it
       // TODO: make this dumber / unmix concerns
       dates[row.key[1] + '-' + row.key[2] + '-' + row.key[3]] = row.value;
     } else {
