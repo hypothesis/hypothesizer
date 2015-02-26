@@ -10,3 +10,7 @@ metadata) and give you visibility into its current state, history, and usage.
  - couchapp push . http://...that-couchdb-url
  - open http://...that-couchdb-url/_design/hypothesizer/_rewrite/index.html
  - read the numbers :smiley_cat:
+
+### Looks like this
+
+![Hypothesizer Screenshot](screenshot.png)
