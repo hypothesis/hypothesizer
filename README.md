@@ -14,3 +14,7 @@ metadata) and give you visibility into its current state, history, and usage.
 ### Looks like this
 
 ![Hypothesizer Screenshot](screenshot.png)
+
+### License
+
+[BSD](http://choosealicense.com/licenses/bsd-2-clause/)
