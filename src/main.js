@@ -3,8 +3,7 @@ require('insert-css')(require('./main.css'));
 var Vue = require('vue');
 var PouchDB = require('pouchdb');
 
-var db = new PouchDB(location.protocol + '//' + location.hostname + ':'
-    + location.port + '/hypothesizer');
+var db = new PouchDB('https://hypothesis.cloudant.com/hypothesizer');
 
 Vue.filter('limit',
   function (list, n) {

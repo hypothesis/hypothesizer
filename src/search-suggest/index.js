@@ -1,6 +1,5 @@
 var PouchDB = require('pouchdb');
-var db = new PouchDB(location.protocol + '//' + location.hostname + ':'
-    + location.port + '/' + location.pathname.split('/')[1]);
+var db = new PouchDB('https://hypothesis.cloudant.com/hypothesizer');
 
 module.exports = {
   replace: true,
