@@ -15,6 +15,15 @@
     }
   },
   {
+    "from": "/atom",
+    "to": "_list/atom/by_created",
+    "query": {
+      "reduce": "false",
+      "include_docs": "true",
+      "limit": "10"
+    }
+  },
+  {
     "from": "/tags/",
     "to": "_list/table/by_tag",
     "query": {
