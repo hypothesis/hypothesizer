@@ -14,7 +14,7 @@ function(head, req) {
   var ddoc = this;
   start({
     'headers': {
-      'Content-Type': 'text/html'
+      'Content-Type': 'application/atom+xml'
     }
   });
 
