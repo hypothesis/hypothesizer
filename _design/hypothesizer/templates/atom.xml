@@ -4,7 +4,7 @@
 
   <title>{{feed.title}}</title>
   <subtitle>{{feed.subtitle}}</subtitle>
-  <link rel="self" href="{{feed._links.self.href}}" />
+  <link href="{{feed._links.self.href}}" />
   <link rel="alternate" href="{{feed._links.alternate.href}}" />
   <link rel="next" href="{{feed._links.next.href}}" />
   <id>{{feed.id}}</id>
