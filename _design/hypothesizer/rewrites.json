@@ -20,7 +20,8 @@
     "query": {
       "reduce": "false",
       "include_docs": "true",
-      "limit": "10"
+      "limit": "10",
+      "descending": "true"
     }
   },
   {
