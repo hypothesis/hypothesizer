@@ -14,6 +14,7 @@
   {{#feed.entries}}
   <entry>
     <title>{{title}}</title>
+    <link type="{{_links.self.type}}" href="{{_links.self.href}}"/>
     {{#each _links}}
     <link rel="{{@key}}" type="{{type}}" href="{{href}}"/>
     {{/each}}

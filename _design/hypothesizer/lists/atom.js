@@ -43,11 +43,13 @@ function(head, req) {
   while (row = getRow()) {
     user = row.doc.user.replace('acct:', '');
     updated = moment(row.doc.created).toISOString();
+    content_doc = row.doc;
+    content_doc.user = user;
     entries.push({
       id: row.doc._id,
       title: 'Annotation by ' + user + ' on ' + row.doc['document'].title || row.doc.uri,
       updated: updated,
-      content: Handlebars.compile(ddoc.templates['annotation-content'])(row.doc),
+      content: Handlebars.compile(ddoc.templates['annotation-content'])(content_doc),
       author: {
         name: user
       },

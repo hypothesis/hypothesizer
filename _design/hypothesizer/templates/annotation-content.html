@@ -1,15 +1,14 @@
-<article class="ui card">
-  <div class="content">
-    <section class="description">
-      <blockquote>{{quote}}</blockquote>
-      {{text}}
-    </section>
-  </div>
-  {{#if tags}}
-  <footer class="extra content">
-    <div class="right floated">
-    {{#tags}}<span class="ui tag label">{{.}}</span>{{/tags}}
-    </div>
-  </footer>
-  {{/if}}
-</article>
+<aside vocab="http://www.w3.org/ns/oa#" typeof="Annotation" about="https://hypothes.is/a/{{id}}">
+  <header>
+    <a property="annotatedBy" href="https://hypothes.is/u/{{user}}"></a>
+    <a property="hasTarget" typeof="SpecificResource" href="{{{document.link.0.href}}}">
+      <span property="hasSelector" typeof="TextQuoteSelector" resource="#quote" content="{{document.title}}"></span>
+    </a>
+  </header>
+
+  <blockquote id="quote" about="#quote" cite="{{{document.link.0.href}}}"><mark property="exact">{{quote}}</mark></blockquote>
+
+  <section property="hasBody">
+    <p>{{text}}</p>
+  </section>
+</aside>
