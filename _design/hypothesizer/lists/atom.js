@@ -20,9 +20,14 @@ function(head, req) {
 
   var next = Number(req.query.skip || 0) + Number(req.query.limit);
 
+  var feed_title = "Hypothes.is Stream";
+  if ('user' in req.query) {
+    feed_title = req.query.user + " Hypothes.is Stream";
+  }
+
   var output = {
     feed: {
-      title: "Hypothes.is Stream",
+      title: feed_title,
       subtitle: "The Web. Annotated.",
       id: "http://hypothes.is/stream",
       _links: {
@@ -45,9 +50,15 @@ function(head, req) {
     updated = moment(row.doc.created).toISOString();
     content_doc = row.doc;
     content_doc.user = user;
+    title = 'Annotation by ' + user + ' on ';
+    if ('document' in row.doc && 'title' in row.doc['document']) {
+      title += row.doc['document'].title;
+    } else {
+      title += row.doc.uri;
+    }
     entries.push({
       id: row.doc._id,
-      title: 'Annotation by ' + user + ' on ' + row.doc['document'].title || row.doc.uri,
+      title: title,
       updated: updated,
       content: Handlebars.compile(ddoc.templates['annotation-content'])(content_doc),
       author: {

@@ -130,6 +130,54 @@
     }
   },
   {
+    "from": "/users.atom/:user",
+    "to": "_list/atom/by_user",
+    "query": {
+      "endkey": [":user"],
+      "startkey": [":user", "Z"],
+      "reduce": "false",
+      "include_docs": "true",
+      "limit": "10",
+      "descending": "true"
+    }
+  },
+  {
+    "from": "/users.atom/:user/:year",
+    "to": "_list/atom/by_user",
+    "query": {
+      "endkey": [":user", ":year"],
+      "startkey": [":user", ":year", "Z"],
+      "reduce": "false",
+      "include_docs": "true",
+      "limit": "10",
+      "descending": "true"
+    }
+  },
+  {
+    "from": "/users.atom/:user/:year/:month",
+    "to": "_list/atom/by_user",
+    "query": {
+      "endkey": [":user", ":year", ":month"],
+      "startkey": [":user", ":year", ":month", "Z"],
+      "reduce": "false",
+      "include_docs": "true",
+      "limit": "10",
+      "descending": "true"
+    }
+  },
+  {
+    "from": "/users.atom/:user/:year/:month/:day",
+    "to": "_list/atom/by_user",
+    "query": {
+      "endkey": [":user", ":year", ":month", ":day"],
+      "startkey": [":user", ":year", ":month", ":day", "Z"],
+      "reduce": "false",
+      "include_docs": "true",
+      "limit": "10",
+      "descending": "true"
+    }
+  },
+  {
     "from": "*",
     "to": "*"
   }
