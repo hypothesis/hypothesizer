@@ -12,6 +12,11 @@ function(head, req) {
     return encodeURIComponent(uri);
   });
   var ddoc = this;
+  start({
+    'headers': {
+      'Content-Type': 'application/atom+xml'
+    }
+  });
 
   var next = Number(req.query.skip || 0) + Number(req.query.limit);
 
@@ -40,7 +45,6 @@ function(head, req) {
     }
   };
   var entries = [];
-  var updated = false;
   while (row = getRow()) {
     user = row.doc.user.replace('acct:', '');
     updated = moment(row.doc.created).toISOString();
@@ -72,26 +76,8 @@ function(head, req) {
       }
     });
   }
-
-  if (updated) {
-    start({
-      'code': 200,
-      'headers': {
-        'Content-Type': 'application/atom+xml'
-      }
-    });
-
-    output.feed.entries = entries;
-    // use last result of updated
-    output.feed.updated = updated;
-    send(Handlebars.compile(ddoc.templates.atom)(output));
-  } else {
-    start({
-      'code': 400,
-      'headers': {
-        'Content-Type': 'text/html'
-      }
-    });
-    return "Not Found.";
-  }
+  output.feed.entries = entries;
+  // use last result of updated
+  output.feed.updated = updated;
+  send(Handlebars.compile(ddoc.templates.atom)(output));
 }
