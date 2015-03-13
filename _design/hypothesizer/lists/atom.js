@@ -45,6 +45,7 @@ function(head, req) {
     }
   };
   var entries = [];
+  var updated = moment().toISOString();
   while (row = getRow()) {
     user = row.doc.user.replace('acct:', '');
     updated = moment(row.doc.created).toISOString();
