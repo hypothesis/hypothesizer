@@ -53,7 +53,7 @@ function(head, req) {
         first = false;
       }
       if (user && stat > 0) {
-        send('<a href="users/' + user + '/' + day.format('YYYY/MM/DD') + '">');
+        send('<a href="/users/' + user + '/' + day.format('YYYY/MM/DD') + '">');
       }
       if (day.format('YYYY-MM-DD') == today.format('YYYY-MM-DD')) {
         send('<strong>' + stat + '</strong>');
