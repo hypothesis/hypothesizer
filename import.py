@@ -8,7 +8,9 @@ import requests
 
 couch = 'https://hypothesis.cloudant.com/hypothesizer'
 #couch = 'http://localhost:5984/hypothesizer'
-user = 'hypothesis'
+user = os.environ.get('COUCHDB_USER')
+if user == None:
+    user = 'hypothesis'
 password = os.environ.get('COUCHDB_PASS')
 if  password == None:
     password = getpass('Password for CouchDB:')
