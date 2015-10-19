@@ -15,6 +15,13 @@ metadata) and give you visibility into its current state, history, and usage.
 
 ![Hypothesizer Screenshot](screenshot.png)
 
+### Atom Feeds
+
+Hypothesizer now includes [Atom feeds](http://tools.ietf.org/html/rfc4287)!
+
+ - /atom
+ - /users.atom/{user}{/year}{/month}{/day}
+
 ### License
 
 [BSD](http://choosealicense.com/licenses/bsd-2-clause/)

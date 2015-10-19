@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title>{{feed.title}}</title>
+  <subtitle>{{feed.subtitle}}</subtitle>
+  <link href="{{feed._links.self.href}}" />
+  <link rel="alternate" href="{{feed._links.alternate.href}}" />
+  <link rel="next" href="{{feed._links.next.href}}" />
+  <id>{{feed.id}}</id>
+  <updated>{{feed.updated}}</updated>
+
+
+  {{#feed.entries}}
+  <entry>
+    <title>{{title}}</title>
+    <link type="{{_links.self.type}}" href="{{_links.self.href}}"/>
+    {{#each _links}}
+    <link rel="{{@key}}" type="{{type}}" href="{{href}}"/>
+    {{/each}}
+    <id>{{_links.self.href}}</id>
+    <updated>{{updated}}</updated>
+    <content type="html">
+      {{content}}
+      &lt;!--
+      &lt;aside vocab=&quot;http://www.w3.org/ns/oa#&quot; typeof=&quot;Annotation&quot; about=&quot;https://hypothes.is/a/Gk_TW9d_SyCG5cFH4UCy9A&quot;&gt;
+        &lt;header&gt;
+        &lt;a property=&quot;annotatedBy&quot; href=&quot;https://hypothes.is/u/&quot;&gt;&lt;/a&gt;
+      on &lt;a property=&quot;hasTarget&quot; typeof=&quot;SpecificResource&quot; href=&quot;http://faculty.georgetown.edu/irvinem/theory/Berners-Lee-HTTP-proposal.pdf&quot;&gt;
+          &lt;span property=&quot;hasSelector&quot; typeof=&quot;TextQuoteSelector&quot; resource=&quot;#quote&quot;&gt;&lt;/span&gt;
+          Berners-Lee-HTTP-proposal.pdf
+          &lt;/a&gt;
+        &lt;/header&gt;
+      &lt;blockquote id=&quot;quote&quot; about=&quot;#quote&quot; cite=&quot;http://faculty.georgetown.edu/irvinem/theory/Berners-Lee-HTTP-proposal.pdf&quot;&gt;&lt;mark property=&quot;exact&quot;&gt;ENQUIRE&lt;/mark&gt;&lt;/blockquote&gt;
+        &lt;section property=&quot;hasBody&quot;&gt;
+        &lt;p&gt;As featured in &amp;quot;Weaving the Web&amp;quot; by Tim Berners-Lee&lt;/p&gt;
+        &lt;/section&gt;
+      &lt;/aside&gt;--&gt;
+    </content>
+    <author><name>{{author.name}}</name></author>
+  </entry>
+  {{/feed.entries}}
+</feed>

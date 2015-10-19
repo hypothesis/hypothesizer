@@ -9,9 +9,9 @@ function(head, req) {
   var ddoc = this;
   var url_prefix = '';
   if (req.path.indexOf('by_tag') > -1) {
-    url_prefix = 'tags/';
+    url_prefix = '/tags/';
   } else if (req.path.indexOf('by_user') > -1) {
-    url_prefix = 'users/';
+    url_prefix = '/users/';
   }
   start({
     'headers': {

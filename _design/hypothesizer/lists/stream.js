@@ -22,11 +22,11 @@ function(head, req) {
   send('<div class="ui one cards">');
   send('<div class="ui huge breadcrumb">');
   if (req.path.indexOf('by_tag') > -1) {
-      send('<a class="section" href="tags/">Tags</a>');
+    send('<a class="section" href="tags/">Tags</a>');
+    send('<div class="divider"> &gt; </div>');
+    send('<div class="active section">' + req.query.key + '</div>');
   } else if (req.path.indexOf('by_user') > -1) {
-      send('<a class="section" href="user/">Users</a>');
-  }
-  if (req.query.startkey) {
+    send('<a class="section" href="user/">Users</a>');
     var url = 'users/';
     for (var i = 0; i < req.query.startkey.length; i++) {
       send('<div class="divider"> &gt; </div>');
@@ -36,9 +36,6 @@ function(head, req) {
         send('<div class="section"><a href="' + (url = url + '/' + req.query.startkey[i]) + '">' + req.query.startkey[i] + '</a></div>');
       }
     }
-  } else {
-    send('<div class="divider"> &gt; </div>');
-    send('<div class="active section">' + req.query.key + '</div>');
   }
   send('</div>');
 
