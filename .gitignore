@@ -1,2 +1,4 @@
 .couchapprc
 node_modules/*
+_design/hypothesizer/lib/from-hypothesis.js
+_design/hypothesizer/_attachments/bundle.js

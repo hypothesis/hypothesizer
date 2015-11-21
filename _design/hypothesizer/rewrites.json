@@ -5,7 +5,7 @@
   },
   {
     "from": "/a/:annotation",
-    "to": "../../:annotation"
+    "to": "_show/as-web-annotation/:annotation"
   },
   {
     "from": "/calendar",
