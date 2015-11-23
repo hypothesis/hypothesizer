@@ -21,6 +21,9 @@
   "scripts": {
     "dev": "browserify -e node_modules/to-web-annotation/src/from-hypothesis/index.js -o _design/hypothesizer/lib/from-hypothesis.js -s fromHypothesis && browserify -e src/main.js -t partialify -o _design/hypothesizer/_attachments/bundle.js && cd _design/hypothesizer && couchapp push . default && cd ../..",
     "docs": "cd _docs && couchapp pushdocs . default",
+    "cloudant": "cd _design/hypothesizer && erica push . cloudant && cd ../..",
+    "cloudant-test": "cd _design/hypothesizer && erica push . cloudant-test && cd ../..",
+
     "test": "mocha --ui bdd",
     "test-browser": "browserify -t partialify test/*.js --exclude test-bundle.js > test/test-bundle.js"
   }

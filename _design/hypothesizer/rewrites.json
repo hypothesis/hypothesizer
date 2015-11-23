@@ -15,6 +15,16 @@
     }
   },
   {
+    "from": "/calendar/:year",
+    "to": "_list/stream/by_created",
+    "query": {
+      "endkey": [":year"],
+      "startkey": [":year", {}],
+      "reduce": "false",
+      "include_docs": "true"
+    }
+  },
+  {
     "from": "/atom",
     "to": "_list/atom/by_created",
     "query": {
@@ -45,6 +55,15 @@
     "to": "_list/table/by_uri",
     "query": {
       "group_level": "1"
+    }
+  },
+  {
+    "from": "/uris/count",
+    "to": "_view/by_uri",
+    "query": {
+      "startkey": [":uri"],
+      "endkey": [":uri", {}],
+      "reduce": "true"
     }
   },
   {
